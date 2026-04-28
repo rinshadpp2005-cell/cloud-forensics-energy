@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Forensics Dashboard — PRJN26-141</title>
+  <style>
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --text:      #c9d1d9;
+      --muted:     #8b949e;
+      --blue:      #58a6ff;
+      --green:     #3fb950;
+      --yellow:    #d29922;
+      --red:       #f85149;
+      --purple:    #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: var(--bg); color: var(--text); padding: 28px 32px; line-height: 1.5; }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    h1   { font-size: 1.65rem; color: var(--blue); margin-bottom: 2px; }
+    .sub { font-size: 0.83rem; color: var(--muted); margin-bottom: 24px; }
+
+    /* ── Banners ─────────────────────────────────────────────────────── */
+    .alert-box, .ok-box {
+      border-radius: 8px; padding: 13px 18px; margin-bottom: 22px; font-size: 0.9rem;
+    }
+    .alert-box { background: rgba(248,81,73,0.10); border: 1px solid rgba(248,81,73,0.45); color: var(--red);   }
+    .ok-box    { background: rgba(63,185,80,0.08); border: 1px solid rgba(63,185,80,0.35); color: var(--green); }
+
+    /* ── Stat cards ──────────────────────────────────────────────────── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+             gap: 12px; margin-bottom: 28px; }
+    .card  { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+             padding: 16px; text-align: center; }
+    .card .val   { font-size: 2rem; font-weight: 700; }
+    .card .label { font-size: 0.7rem; color: var(--muted); margin-top: 4px;
+                   text-transform: uppercase; letter-spacing: .06em; }
+    .c-blue   .val { color: var(--blue);   }
+    .c-red    .val { color: var(--red);    }
+    .c-green  .val { color: var(--green);  }
+    .c-yellow .val { color: var(--yellow); }
+
+    /* ── Section headings ────────────────────────────────────────────── */
+    section   { margin-bottom: 32px; }
+    h2        { font-size: 1.05rem; padding-bottom: 8px; margin-bottom: 12px;
+                border-bottom: 1px solid var(--border); }
+    .sec-alert { color: var(--red); }
+
+    /* ── Tables ──────────────────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.81rem; }
+    thead th {
+      background: #1c2128; color: var(--muted); text-align: left;
+      padding: 10px 14px; font-weight: 600; text-transform: uppercase;
+      font-size: 0.71rem; letter-spacing: .05em; cursor: pointer; white-space: nowrap;
+    }
+    thead th:hover { color: var(--text); }
+    td { padding: 8px 14px; border-top: 1px solid var(--border); vertical-align: middle; }
+    tr:hover td { background: rgba(88,166,255,.04); }
+
+    /* ── Status row colours ──────────────────────────────────────────── */
+    .row-new      td { background: rgba(63,185,80,.07);  }
+    .row-modified td { background: rgba(210,153,34,.09); }
+    .row-deleted  td { background: rgba(248,81,73,.08);
+                       text-decoration: line-through; color: var(--muted); }
+
+    /* ── Badges ──────────────────────────────────────────────────────── */
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: .04em;
+    }
+    .badge-new      { background: rgba(63,185,80,.2);  color: var(--green);  border: 1px solid rgba(63,185,80,.45);  }
+    .badge-modified { background: rgba(210,153,34,.2); color: var(--yellow); border: 1px solid rgba(210,153,34,.45); }
+    .badge-deleted  { background: rgba(248,81,73,.2);  color: var(--red);    border: 1px solid rgba(248,81,73,.45);  }
+    .badge-clean    { background: rgba(139,148,158,.15); color: var(--muted); border: 1px solid rgba(139,148,158,.3); }
+
+    /* ── Misc ────────────────────────────────────────────────────────── */
+    .mono  { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.77rem; }
+    .hash  { color: var(--muted); }
+    .num   { text-align: right; }
+    .meta  { font-size: 0.8rem; color: var(--muted); margin-bottom: 16px; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+             color: var(--muted); font-size: 0.77rem; }
+    </style>
+</head>
+<body>
+
+  <h1>Cloud Forensics Evidence Dashboard</h1>
+  <div class="sub">
+    Project PRJN26-141 &mdash; Energy Sector Breach Investigation
+    &nbsp;|&nbsp; Generated: 2026-04-06 16:30:53
+  </div>
+
+  <div class="ok-box">&#10003;  All file hashes match the baseline. No tampering detected.</div>
+
+  <div class="cards">
+    <div class="card c-blue" ><div class="val">15</div><div class="label">Total Files</div></div>
+    <div class="card c-red"  ><div class="val">0</div><div class="label">Flagged</div></div>
+    <div class="card c-green"><div class="val">0</div><div class="label">New</div></div>
+    <div class="card c-yellow"><div class="val">0</div><div class="label">Modified</div></div>
+    <div class="card c-red"  ><div class="val">0</div><div class="label">Deleted</div></div>
+    <div class="card c-green"><div class="val">15</div><div class="label">Clean</div></div>
+  </div>
+
+  <div class="meta">Target directory: <span class="mono">sample_energy_data/</span></div>
+
+  
+
+  <section>
+    <h2>All Scanned Files</h2>
+    <div class="table-wrap">
+      <table id="mainTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable('mainTable',0)">Status</th>
+            <th onclick="sortTable('mainTable',1)">Filename</th>
+            <th onclick="sortTable('mainTable',2)">Type</th>
+            <th onclick="sortTable('mainTable',3)">Size (B)</th>
+            <th onclick="sortTable('mainTable',4)">Created</th>
+            <th onclick="sortTable('mainTable',5)">Modified</th>
+            <th onclick="sortTable('mainTable',6)">Accessed</th>
+            <th>MD5 (partial)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\access_log.log">access_log.log</td><td class="mono">.log</td><td class="num">2,887</td><td>2026-04-06 16:20:35</td><td>2026-04-06 16:20:35</td><td>2026-04-06 16:30:28</td><td class="mono hash">79630454534bd869…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\anomaly_report.csv">anomaly_report.csv</td><td class="mono">.csv</td><td class="num">1,830</td><td>2026-04-06 16:20:53</td><td>2026-04-06 16:20:53</td><td>2026-04-06 16:30:28</td><td class="mono hash">0510a2a80974e42f…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\api_config.cfg">api_config.cfg</td><td class="mono">.cfg</td><td class="num">1,686</td><td>2026-04-06 16:22:35</td><td>2026-04-06 16:22:35</td><td>2026-04-06 16:30:28</td><td class="mono hash">bdfe8651a6492130…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\billing_records_Q1_2026.csv">billing_records_Q1_2026.csv</td><td class="mono">.csv</td><td class="num">1,898</td><td>2026-04-06 16:19:24</td><td>2026-04-06 16:19:24</td><td>2026-04-06 16:30:28</td><td class="mono hash">551225bfa144245c…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\emergency_contacts.txt">emergency_contacts.txt</td><td class="mono">.txt</td><td class="num">1,848</td><td>2026-04-06 16:22:00</td><td>2026-04-06 16:22:00</td><td>2026-04-06 16:30:28</td><td class="mono hash">d267e9b15e973882…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\employee_access.csv">employee_access.csv</td><td class="mono">.csv</td><td class="num">1,006</td><td>2026-04-06 16:21:34</td><td>2026-04-06 16:21:34</td><td>2026-04-06 16:30:28</td><td class="mono hash">fc079dd69ddcf918…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\grid_config.ini">grid_config.ini</td><td class="mono">.ini</td><td class="num">1,810</td><td>2026-04-06 16:19:38</td><td>2026-04-06 16:19:38</td><td>2026-04-06 16:30:28</td><td class="mono hash">f2d3e3fc3a14e84c…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\maintenance_schedule.csv">maintenance_schedule.csv</td><td class="mono">.csv</td><td class="num">1,597</td><td>2026-04-06 16:21:20</td><td>2026-04-06 16:21:20</td><td>2026-04-06 16:30:28</td><td class="mono hash">38642c0e69dab630…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\meter_readings_feb2026.csv">meter_readings_feb2026.csv</td><td class="mono">.csv</td><td class="num">1,113</td><td>2026-04-06 16:19:08</td><td>2026-04-06 16:19:08</td><td>2026-04-06 16:30:28</td><td class="mono hash">2d5f514031d3d76e…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\meter_readings_jan2026.csv">meter_readings_jan2026.csv</td><td class="mono">.csv</td><td class="num">1,705</td><td>2026-04-06 16:18:59</td><td>2026-04-06 16:18:59</td><td>2026-04-06 16:30:28</td><td class="mono hash">f0675a18d7e08536…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\network_topology.json">network_topology.json</td><td class="mono">.json</td><td class="num">3,087</td><td>2026-04-06 16:21:50</td><td>2026-04-06 16:21:50</td><td>2026-04-06 16:30:28</td><td class="mono hash">4ab8a882ec176d60…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\power_forecast.csv">power_forecast.csv</td><td class="mono">.csv</td><td class="num">1,644</td><td>2026-04-06 16:21:08</td><td>2026-04-06 16:21:08</td><td>2026-04-06 16:30:28</td><td class="mono hash">0248ae1e4c5d5e56…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\scada_backup.log">scada_backup.log</td><td class="mono">.log</td><td class="num">2,251</td><td>2026-04-06 16:22:13</td><td>2026-04-06 16:22:13</td><td>2026-04-06 16:30:28</td><td class="mono hash">b1a6e1ad84cd89fc…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\substation_config.xml">substation_config.xml</td><td class="mono">.xml</td><td class="num">3,116</td><td>2026-04-06 16:20:01</td><td>2026-04-06 16:20:01</td><td>2026-04-06 16:30:28</td><td class="mono hash">8858195a23b327a5…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\shamil\Desktop\collage PT with id\PRJN26-141\cloud-forensics-energy\sample_energy_data\system_events.log">system_events.log</td><td class="mono">.log</td><td class="num">2,901</td><td>2026-04-06 16:20:21</td><td>2026-04-06 16:20:21</td><td>2026-04-06 16:30:28</td><td class="mono hash">2d88dc3d96ba5958…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Cloud Forensics Automation &mdash; PRJN26-141 | Energy Sector Breach Analysis<br>
+    Standard library only &mdash; no external dependencies | Python 3.10+
+  </footer>
+
+  <script>
+    const sortState = {};
+    function sortTable(tableId, col) {
+      const tbody = document.querySelector('#' + tableId + ' tbody');
+      const rows  = Array.from(tbody.querySelectorAll('tr'));
+      const asc   = !(sortState[tableId + col]);
+      sortState[tableId + col] = asc;
+      rows.sort((a, b) => {
+        const av = a.cells[col]?.textContent.trim() || '';
+        const bv = b.cells[col]?.textContent.trim() || '';
+        const an = parseFloat(av.replace(/,/g, ''));
+        const bn = parseFloat(bv.replace(/,/g, ''));
+        if (!isNaN(an) && !isNaN(bn)) return asc ? an - bn : bn - an;
+        return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+      });
+      rows.forEach(r => tbody.appendChild(r));
+    }
+    </script>
+</body>
+</html>

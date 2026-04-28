@@ -1,0 +1,391 @@
+{
+  "created": "2026-04-16 23:03:35",
+  "target_directory": "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy",
+  "file_count": 64,
+  "files": {
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\README.md": {
+      "md5": "e192a3c9b32b3d9ec900366197f0be1f",
+      "sha256": "a02d757ae9eb0f59d1dc89a8a568864366a7c4f67e2676ffdd2a59fc5b20fa69",
+      "size_bytes": 11587,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\app.py": {
+      "md5": "eee8ba86f3af52dd11749f0cdfba8658",
+      "sha256": "5dc69d42b164947a8f50ba3e84e8eb8d962f093f6e9a50bbf6a4892fd2378e16",
+      "size_bytes": 41337,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\cammand.txt": {
+      "md5": "088d3ccaa89b493dfb5b5b33f7174a70",
+      "sha256": "735eb1ca0a70c65665e9f024dbb58123c5332fc98780202272105cbb2687cf38",
+      "size_bytes": 1737,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\comparator.py": {
+      "md5": "a24b0d30e656f55952ffd81226c3f277",
+      "sha256": "864acd61efafb3dca7b364f2b988337cfbc6dcec1be744c4234348585abd4aeb",
+      "size_bytes": 6834,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-06_163053.csv": {
+      "md5": "183cd45c2917cd0256cd7f32435c3eb1",
+      "sha256": "1cc1c2428e2e968e0bade0f9b99a7ea882b5422f61eced67bfee0190176995f3",
+      "size_bytes": 4997,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-06_163114.csv": {
+      "md5": "318750796dee0c42184c82610bc088c2",
+      "sha256": "dcf1a898c4bbb0f05d3c315b6ec3f6e144918f3fa683ee572bc1a97a2b5f18df",
+      "size_bytes": 5285,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-07_003138.csv": {
+      "md5": "d590cebbf69392803da994ec65a551c3",
+      "sha256": "a955fdc4bbb8c749b315cdfd7822bb3729763fe0045e20ae0e94ea63b3e3be88",
+      "size_bytes": 4997,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-07_003243.csv": {
+      "md5": "1e7c7106708568115a5abeaa2a40e53a",
+      "sha256": "fa517aef1224201246c96da6b1b5023145de6a16981381e6e80d58c52ead6978",
+      "size_bytes": 4997,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-07_004043.csv": {
+      "md5": "97e5083d172205d461721fa0dc9b71ca",
+      "sha256": "94847ccc72aa07546436631af6cbea1e643ce3e60783cddab7c571614ea92315",
+      "size_bytes": 4997,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-07_004218.csv": {
+      "md5": "ee5f471139fd824b623e535db46bdb3e",
+      "sha256": "91bd40d09abd773d53ed2374635f2d20e48e40c90d34adde7eb45daf69aaea76",
+      "size_bytes": 839998,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_192630.csv": {
+      "md5": "8cb3b0c34804a22b69db73f0faec62c4",
+      "sha256": "5f1d36bc6aaa85f60c951f5769ae48f1f58ff4ac91abd7c1d937cf2737444f80",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_192636.csv": {
+      "md5": "a18ccfb5880036d8997cff8626dc6164",
+      "sha256": "71fb32abab79085a47a567b8fae6498fbf72c081ee85a1030605a32ac6e6f018",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_224228.csv": {
+      "md5": "a1e777294dbc394f06727b2de5047e01",
+      "sha256": "a7cb467aba0c812db4b6903b90d1d11c8015ed20219e7f4fe748c79fe4738f7c",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:42:28"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_224437.csv": {
+      "md5": "72a4e2c074f5eb721336e46b3916716f",
+      "sha256": "a01c00d2602b3672f9aa8ef2b78a650bdab93c5277053b8c2359dd708aada359",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:44:37"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_224441.csv": {
+      "md5": "f2d4807253e94810bf1083aa53b96bc8",
+      "sha256": "b82630e8320c34afcde226f482aac89147600439dc74640fe69d926fa0df935c",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:44:41"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_224634.csv": {
+      "md5": "8a591e84a0579f080ed181167ff5f7e1",
+      "sha256": "1ae2698a3505e5c24c9ba6360360cb14d785cdf2b668978520c27b68cdfdfbc4",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:46:34"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_224752.csv": {
+      "md5": "7249f726fd4dc30bdba714d571c9bca7",
+      "sha256": "8c0eb6716c6e9c8d7fad66df371c616bb1c5590366610cfd27d0f1a6afc06ed3",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:47:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_224755.csv": {
+      "md5": "dd2bc32beae9b5a030ba9b1447e41d9e",
+      "sha256": "be1e5905639148f2da5c076a05fabab67c62f88e44436e61dced9ef5e59fe2e5",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:47:55"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_225141.csv": {
+      "md5": "8aba7f9838e5c04122432fcf271fbf95",
+      "sha256": "c3035dae05d815e3173589c80550a4669043c09842369bdae3704f30011d650a",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:51:41"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_225335.csv": {
+      "md5": "a346f08258d5c305600bf5c016ca069f",
+      "sha256": "8e9fffc7d49b4954dd648c0325fbae85112fda350538172e256d3084c5e11712",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:53:35"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_225421.csv": {
+      "md5": "c1613baf64e510910f05d80f2c1bbb21",
+      "sha256": "f804d7f8a84fcc7701a6ea8f377d137eb31821fbb141848ddd780a29a0193814",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:54:21"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_230025.csv": {
+      "md5": "b25a3d3aa63f45085536117ddd038659",
+      "sha256": "4f1dc41a86d50bae72447837fbdecb1fcf71eb98af2f2c91a4d7e1b4d81b735f",
+      "size_bytes": 244,
+      "modified": "2026-04-16 23:00:25"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_230031.csv": {
+      "md5": "3c5efc8fcdfcf3e800f2a6f68a18ab6c",
+      "sha256": "9a41922751f96d3f8ed5474a5afde867c45b14d6946a3e4f7a9f59ca83eb902a",
+      "size_bytes": 244,
+      "modified": "2026-04-16 23:00:31"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_230225.csv": {
+      "md5": "69ed1a57f80eac7b99111970d79c8609",
+      "sha256": "1951f2613880e84f727be60c982cb78f38e94fa4c382bf844557e80c102f95fb",
+      "size_bytes": 4528,
+      "modified": "2026-04-16 23:02:25"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\evidence_report_2026-04-16_230300.csv": {
+      "md5": "fecb8d3745494748addbdb705b66b476",
+      "sha256": "c4306d002024537b7699b72b7db516a6668361d17f94425e6f50e81570c6e065",
+      "size_bytes": 4528,
+      "modified": "2026-04-16 23:03:00"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-06_163053.html": {
+      "md5": "d803dd77ad4ffc64137af6a6184817ff",
+      "sha256": "6b35c20e28026391b54e2fba6e68d09596c1fccd6db0468ea7fc91b73a7f7bff",
+      "size_bytes": 14447,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-06_163114.html": {
+      "md5": "e9f3685b416692a8cd3d6f6e88117759",
+      "sha256": "7f68065e8c253315bb337996d11a43987f0e77d51833583ae5b56af075d45e99",
+      "size_bytes": 16501,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-07_003138.html": {
+      "md5": "35f534537911e605d9d4d4ca2da6267b",
+      "sha256": "11d95918775f24819bc439025b8665cc0b92464998df30a4daea4be5bdb54973",
+      "size_bytes": 14447,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-07_003243.html": {
+      "md5": "2dc0d083c24a96294ff6708a85144d6f",
+      "sha256": "5e2fcf063acc1e200c3b3051a883c1cc16b30481d0d24757f807812a595ec394",
+      "size_bytes": 14447,
+      "modified": "2026-04-16 22:37:33"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-07_004043.html": {
+      "md5": "9072c02e84ed4c7a678ed880888e6b81",
+      "sha256": "babe084f218b4dd3872d8d1d65d07067a5b7c0c955e641c326c11c7ef9aac2f8",
+      "size_bytes": 14447,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-07_004218.html": {
+      "md5": "c9df5ba2797cf735190ca9fb47bd908c",
+      "sha256": "928b17002a3b99cafd2037661add8bb83e29a15a90006b1d23755ac4781593bd",
+      "size_bytes": 1055889,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_192630.html": {
+      "md5": "c0dfda076904dd92f15f9958c9d4cd6e",
+      "sha256": "bbbff2301efee189a6d8e79e5e0e7429936edb5b5c342211bea4e6501cef6b4c",
+      "size_bytes": 8315,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_192636.html": {
+      "md5": "f388ba8904d669419e695578e31bea04",
+      "sha256": "0f30546021ac089fe3ef26c5a016ef3520c3ab9274f828a7098f38b3fb36ae7b",
+      "size_bytes": 8315,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_224228.html": {
+      "md5": "9df1fdff805415cac4563336e51f6b35",
+      "sha256": "aa6b06115c8581018f8f1ba6c8263476c251bb3368ceee00a2e14006cc5adc8c",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:42:28"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_224437.html": {
+      "md5": "a8516c3118749dcf7cc31e67ae7e1820",
+      "sha256": "cabacb2c5fbf35751b0f06c5517f62f3145768924dbb1e5033a0c2cf8ab992e9",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:44:37"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_224441.html": {
+      "md5": "21cf18035f7ddf8da2d7809f0c8e94ec",
+      "sha256": "1d83d9ac8243d4feefce5b7ea746afd9993b53ac7ab2cc0dc9d23bbcfc66af02",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:44:41"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_224634.html": {
+      "md5": "ab0cb7debac601c522d9d8973402f5bb",
+      "sha256": "2e6d769357ee871b3692f4399b88d64306f97fe800f02d2fc3b044d50e66766a",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:46:34"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_224752.html": {
+      "md5": "830ffd79a9b5ad4c7c51c5b39db4a202",
+      "sha256": "db843666ba8f816a0a8cd8b69337afd5c2c20fefbe68d2946a98b4ef6ff89a35",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:47:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_224755.html": {
+      "md5": "fbcd30087d9b4c89bc169997b521fbc3",
+      "sha256": "9814e14b49a9c252b6aaaf3db163e8a4f5cd7947c90f0ca6c1af442b901f65f4",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:47:55"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_225141.html": {
+      "md5": "abf32d2881cd7d604f92a73fdc46ad13",
+      "sha256": "5f295126ccc94495afb769a5e55a91458a7f86a935c5166464805af185090ad1",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:51:41"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_225335.html": {
+      "md5": "9e09d1d2a88e14ee6097de9f874738b5",
+      "sha256": "74383d98e929558e275c5b14602fbf3c0e3d4b7fd83d943b3492b37a5b472cab",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:53:35"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_225421.html": {
+      "md5": "b8ed302c805b991ae77700f6239244f5",
+      "sha256": "2ff343c01c27f9da6348b0e0daa5795a3251888980b6946edf251796f7fdc08a",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 22:54:21"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_230025.html": {
+      "md5": "382d1ccf1281c5a3ebbab9c06081810f",
+      "sha256": "68a3057c574e27593691a36c2a4a757f6eb7f27ed8191f9b3277156e49c62190",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 23:00:25"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_230031.html": {
+      "md5": "6d72e8aebaa3ea6db267a85f9c26e136",
+      "sha256": "f259505ae2322a37ccfdb6c0430f7e85ff8e8d017455e039c3b30b1fc0a55cf8",
+      "size_bytes": 8385,
+      "modified": "2026-04-16 23:00:31"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_230225.html": {
+      "md5": "6f7022ee6a4e3fb6c2abb9a48d56ca1e",
+      "sha256": "282d06efc4579976faf8e10418e78160995fcadec7013259fdf2d503b23533dc",
+      "size_bytes": 13923,
+      "modified": "2026-04-16 23:02:25"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_dashboard_2026-04-16_230300.html": {
+      "md5": "d12eef66fec54f44c1d31a406c685732",
+      "sha256": "249c26041a7409deacf42e76fc51295772080db7f944b3b4b877dfc87aa0e8d5",
+      "size_bytes": 13923,
+      "modified": "2026-04-16 23:03:00"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_log.txt": {
+      "md5": "d5d2c26b4c18fcd6d6b31795d3fb5a94",
+      "sha256": "3a2a25b1cffffab0461ea6f8f1b8f5ce909311673ae7420d2941ba8f167b3a34",
+      "size_bytes": 28283,
+      "modified": "2026-04-16 23:03:35"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\forensic_tool.py": {
+      "md5": "6be911c5ca125956b578300e17e8e0ed",
+      "sha256": "d93542b58f011d53958806acfdbe6f1fa789644f926032467bcddcfbc56f46a0",
+      "size_bytes": 9976,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\hasher.py": {
+      "md5": "25a251f9ae5a743036fdd7aa641bde25",
+      "sha256": "9d9d462ba2ece645741dad0f2469f6ff2b0bd695abbd9cb48cc99aed3df03627",
+      "size_bytes": 1140,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\logger_config.py": {
+      "md5": "f93c79f38608998bfa0f43ddb4496def",
+      "sha256": "d4750f1455d6cec1693304d06ea8d4b151f4a938c9b4be87bc4e0b1c2d329086",
+      "size_bytes": 1283,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\report_generator.py": {
+      "md5": "fb212b5202d1f1e96933532ee960f43e",
+      "sha256": "1197e9130e210a03b4042a533e00f9ca7ed584f498daecd7a446280a9f08bcef",
+      "size_bytes": 16768,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\requirements.txt": {
+      "md5": "ae77aab94fc2145dc649170af65d7073",
+      "sha256": "677fd8237217405e81ded8c75774184f4d500dd3557fd3cbcefd4c85b9c6a7d6",
+      "size_bytes": 329,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\scanner.py": {
+      "md5": "4cb55dafe56a03aad40dbd8311a7a783",
+      "sha256": "df146ae0e6fc6473aa08d5c5363c0aedbbe61c5c9d4364da847e45318d9ebf4b",
+      "size_bytes": 3531,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\baselines\\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json": {
+      "md5": "c2473039ff2df6f241d378d004bcd1e5",
+      "sha256": "63360ec1ece554140e5a268ffb36a8e0842dc912dee537bffa714ce4598173d2",
+      "size_bytes": 4582,
+      "modified": "2026-04-16 23:01:56"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\baselines\\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json": {
+      "md5": "7aa6c159b57416aa93e32c57ee36f5f2",
+      "sha256": "131225aaa8f4d7ffd2e352cef73a989e415a4803791e6bdb5582418d716b6fab",
+      "size_bytes": 198,
+      "modified": "2026-04-16 23:00:17"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\baselines\\baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json": {
+      "md5": "d9551213b130177e352bfdab57fcca51",
+      "sha256": "8b3d1f82a14152c78670e1e966fd2f7c0db1bfdff4e51588f74bfc8c41c32f8b",
+      "size_bytes": 205,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\baselines\\baseline_C_Users_shamil_Desktop_flutter.json": {
+      "md5": "fdcaa7910ad92b830f6b3395445ec871",
+      "sha256": "02620c7d0fc76da98bc2a80b0b284325ce79f93e4692e29743a895a90541304c",
+      "size_bytes": 5620953,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\baselines\\baseline_C_Users_shamil_Desktop_hey_meat.json": {
+      "md5": "ebf6e5448cb7a7fcd8cf923f21908497",
+      "sha256": "8a516482d0ff86f7d972cd83a43e987169786b86f281c547ed4efbeb73c00ede",
+      "size_bytes": 888101,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\reports\\evidence_report_2026-04-07_003205.csv": {
+      "md5": "05693c6cd4da9c8b137de09530359787",
+      "sha256": "983b4eca757ad8d4c54d2208bbd37356b5887f23effb7a5eef0b9cf4d117742d",
+      "size_bytes": 4997,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\reports\\evidence_report_2026-04-07_003305.csv": {
+      "md5": "ecb0ade2a4771d4683495b089028c66d",
+      "sha256": "ef9cb185db47573b60af76bb1755eaff942b93fa6eaa40f88532afe04911ab08",
+      "size_bytes": 4997,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\reports\\evidence_report_2026-04-16_192549.csv": {
+      "md5": "cedb824402da64b066ff981ee2f3c4d5",
+      "sha256": "f1f55938dcf24fcdeb188dfb7637d354c7fb6057e91f8f8694d3ffe1c88a7769",
+      "size_bytes": 244,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\reports\\forensic_dashboard_2026-04-07_003205.html": {
+      "md5": "b20e9e0b4d98ebee14ca906e960e252d",
+      "sha256": "23715293bb03ca6d6360cfa07b1f6667381b5b9e5aa95b9b77e3a71b040f82a1",
+      "size_bytes": 14447,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\reports\\forensic_dashboard_2026-04-07_003305.html": {
+      "md5": "f361184a137a41df5ad1bf0620975fdd",
+      "sha256": "d8100adaa689597763e50396e57b4c668d2b903834398f07d7704164b9d0dae9",
+      "size_bytes": 14447,
+      "modified": "2026-04-16 22:32:52"
+    },
+    "C:\\Users\\rinsh\\Downloads\\cloud-forensics-energy\\cloud-forensics-energy\\reports\\forensic_dashboard_2026-04-16_192549.html": {
+      "md5": "25f668d0b1cf21b7b979d5eb47e19473",
+      "sha256": "102a6367afc7dba409b8d0ddd46b556053e9b9d8e4cec02ffdbbc69b5d7ae6a8",
+      "size_bytes": 8315,
+      "modified": "2026-04-16 22:32:52"
+    }
+  }
+}

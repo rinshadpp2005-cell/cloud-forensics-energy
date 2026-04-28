@@ -1,0 +1,9 @@
+# Cloud Forensics File Evidence Collector — PRJN26-141
+# Dependencies: standard library ONLY — no pip install required.
+#
+# Modules used (all built-in to Python 3.10+):
+#   os, sys, pathlib, hashlib, csv, json, argparse, logging,
+#   datetime, typing, itertools
+#
+# To run on Python 3.10+:
+#   python forensic_tool.py --help

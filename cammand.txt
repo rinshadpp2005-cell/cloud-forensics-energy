@@ -1,0 +1,50 @@
+All commands, run from inside the project folder:
+
+
+cd "c:/Users/shamil/Desktop/collage PT with id/PRJN26-141/cloud-forensics-energy"
+1. Baseline — create known-good hash snapshot
+
+python forensic_tool.py baseline --path sample_energy_data/
+2. Scan — compare + generate CSV & HTML reports
+
+python forensic_tool.py scan --path sample_energy_data/
+Save reports to a specific folder:
+
+
+python forensic_tool.py scan --path sample_energy_data/ --output reports/
+3. Compare — print changes to console only
+
+python forensic_tool.py compare --path sample_energy_data/
+Compare AND generate reports:
+
+
+python forensic_tool.py compare --path sample_energy_data/ --report
+Compare and save reports to a folder:
+
+
+python forensic_tool.py compare --path sample_energy_data/ --report --output reports/
+4. Help
+
+python forensic_tool.py --help
+python forensic_tool.py scan --help
+python forensic_tool.py baseline --help
+python forensic_tool.py compare --help
+Recommended demo sequence (full workflow)
+
+# Step 1 — go to project folder
+cd "c:/Users/shamil/Desktop/collage PT with id/PRJN26-141/cloud-forensics-energy"
+
+# Step 2 — create baseline
+python forensic_tool.py baseline --path sample_energy_data/
+
+# Step 3 — scan (should show 0 flagged — all clean)
+python forensic_tool.py scan --path sample_energy_data/
+
+# Step 4 — simulate tampering (edit any file in sample_energy_data/)
+#           e.g. open grid_config.ini and change a value, or delete a file
+
+# Step 5 — compare to see what changed
+python forensic_tool.py compare --path sample_energy_data/ --report
+
+# Step 6 — open the HTML dashboard in your browser
+#           file is named: forensic_dashboard_YYYY-MM-DD_HHMMSS.html
