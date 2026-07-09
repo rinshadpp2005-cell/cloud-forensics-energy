@@ -300,3 +300,28 @@ All inter-module communication uses plain Python dicts and lists — no classes,
 
 *Cloud Forensics Automation Tool — PRJN26-141 | Python 3.10+ | Standard Library Only*
 
+## Screenshots
+
+### VS Code Project
+
+![VS Code Project](screenshot/vscode-project.png)
+
+### GUI Dashboard
+
+![GUI Dashboard](screenshot/gui-dashboard.png)
+
+### Scan Process
+
+![Scan Process](screenshot/scan-process.png)
+
+### Scanned Files
+
+![Scanned Files](screenshot/scanned-files.png)
+
+### Evidence Files
+
+![Evidence Files](screenshot/evidence-files.png)
+
+### HTML Dashboard
+
+![HTML Dashboard](screenshot/html-dashboard.png)
