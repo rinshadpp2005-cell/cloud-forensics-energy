@@ -1,4 +1,4 @@
-# Cloud Forensics File Evidence Collector
+# Cloud Forensics Evidence Collector
 ### Project PRJN26-141 — Energy Sector Breach Investigation
 
 A lightweight, fully self-contained Python CLI tool for digital forensic evidence collection in cloud-mounted storage environments. Designed for first-responder use in OT/ICS breach scenarios — no internet access, no pip installs, no external dependencies.
