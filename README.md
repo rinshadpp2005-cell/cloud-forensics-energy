@@ -299,5 +299,4 @@ All inter-module communication uses plain Python dicts and lists — no classes,
 ---
 
 *Cloud Forensics Automation Tool — PRJN26-141 | Python 3.10+ | Standard Library Only*
-#   c l o u d - f o r e n s i c s - e n e r g y  
- 
+

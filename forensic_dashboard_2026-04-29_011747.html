@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Forensics Dashboard — PRJN26-141</title>
+  <style>
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --text:      #c9d1d9;
+      --muted:     #8b949e;
+      --blue:      #58a6ff;
+      --green:     #3fb950;
+      --yellow:    #d29922;
+      --red:       #f85149;
+      --purple:    #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: var(--bg); color: var(--text); padding: 28px 32px; line-height: 1.5; }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    h1   { font-size: 1.65rem; color: var(--blue); margin-bottom: 2px; }
+    .sub { font-size: 0.83rem; color: var(--muted); margin-bottom: 24px; }
+
+    /* ── Banners ─────────────────────────────────────────────────────── */
+    .alert-box, .ok-box {
+      border-radius: 8px; padding: 13px 18px; margin-bottom: 22px; font-size: 0.9rem;
+    }
+    .alert-box { background: rgba(248,81,73,0.10); border: 1px solid rgba(248,81,73,0.45); color: var(--red);   }
+    .ok-box    { background: rgba(63,185,80,0.08); border: 1px solid rgba(63,185,80,0.35); color: var(--green); }
+
+    /* ── Stat cards ──────────────────────────────────────────────────── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+             gap: 12px; margin-bottom: 28px; }
+    .card  { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+             padding: 16px; text-align: center; }
+    .card .val   { font-size: 2rem; font-weight: 700; }
+    .card .label { font-size: 0.7rem; color: var(--muted); margin-top: 4px;
+                   text-transform: uppercase; letter-spacing: .06em; }
+    .c-blue   .val { color: var(--blue);   }
+    .c-red    .val { color: var(--red);    }
+    .c-green  .val { color: var(--green);  }
+    .c-yellow .val { color: var(--yellow); }
+
+    /* ── Section headings ────────────────────────────────────────────── */
+    section   { margin-bottom: 32px; }
+    h2        { font-size: 1.05rem; padding-bottom: 8px; margin-bottom: 12px;
+                border-bottom: 1px solid var(--border); }
+    .sec-alert { color: var(--red); }
+
+    /* ── Tables ──────────────────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.81rem; }
+    thead th {
+      background: #1c2128; color: var(--muted); text-align: left;
+      padding: 10px 14px; font-weight: 600; text-transform: uppercase;
+      font-size: 0.71rem; letter-spacing: .05em; cursor: pointer; white-space: nowrap;
+    }
+    thead th:hover { color: var(--text); }
+    td { padding: 8px 14px; border-top: 1px solid var(--border); vertical-align: middle; }
+    tr:hover td { background: rgba(88,166,255,.04); }
+
+    /* ── Status row colours ──────────────────────────────────────────── */
+    .row-new      td { background: rgba(63,185,80,.07);  }
+    .row-modified td { background: rgba(210,153,34,.09); }
+    .row-deleted  td { background: rgba(248,81,73,.08);
+                       text-decoration: line-through; color: var(--muted); }
+
+    /* ── Badges ──────────────────────────────────────────────────────── */
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: .04em;
+    }
+    .badge-new      { background: rgba(63,185,80,.2);  color: var(--green);  border: 1px solid rgba(63,185,80,.45);  }
+    .badge-modified { background: rgba(210,153,34,.2); color: var(--yellow); border: 1px solid rgba(210,153,34,.45); }
+    .badge-deleted  { background: rgba(248,81,73,.2);  color: var(--red);    border: 1px solid rgba(248,81,73,.45);  }
+    .badge-clean    { background: rgba(139,148,158,.15); color: var(--muted); border: 1px solid rgba(139,148,158,.3); }
+
+    /* ── Misc ────────────────────────────────────────────────────────── */
+    .mono  { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.77rem; }
+    .hash  { color: var(--muted); }
+    .num   { text-align: right; }
+    .meta  { font-size: 0.8rem; color: var(--muted); margin-bottom: 16px; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+             color: var(--muted); font-size: 0.77rem; }
+    </style>
+</head>
+<body>
+
+  <h1>Cloud Forensics Evidence Dashboard</h1>
+  <div class="sub">
+    Project PRJN26-141 &mdash; Energy Sector Breach Investigation
+    &nbsp;|&nbsp; Generated: 2026-04-29 01:17:47
+  </div>
+
+  <div class="alert-box">&#9888;&#xFE0F;  ALERT — 29 file(s) flagged as tampered, new, or deleted. Immediate forensic review required.</div>
+
+  <div class="cards">
+    <div class="card c-blue" ><div class="val">29</div><div class="label">Total Files</div></div>
+    <div class="card c-red"  ><div class="val">29</div><div class="label">Flagged</div></div>
+    <div class="card c-green"><div class="val">29</div><div class="label">New</div></div>
+    <div class="card c-yellow"><div class="val">0</div><div class="label">Modified</div></div>
+    <div class="card c-red"  ><div class="val">0</div><div class="label">Deleted</div></div>
+    <div class="card c-green"><div class="val">0</div><div class="label">Clean</div></div>
+  </div>
+
+  <div class="meta">Target directory: <span class="mono">C:\Apps</span></div>
+
+  
+    <section>
+      <h2 class="sec-alert">&#9888; Tampered / Suspicious Files (29)</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Status</th><th>Filename</th>
+              <th>MD5</th><th>SHA-256 (partial)</th><th>Last Modified</th>
+            </tr>
+          </thead>
+          <tbody><tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\9a15426ec894495f9664b06f66622ba5.appxbundle">9a15426ec894495f9664b06f66622ba5.appxbundle</td><td class="mono hash">177d6459cb654a09755b7beaec006027</td><td class="mono hash">d03f57b71fdd512008b806670fac08eb69e293db…</td><td>2022-08-27 03:48:00</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\9a15426ec894495f9664b06f66622ba5_License1.xml">9a15426ec894495f9664b06f66622ba5_License1.xml</td><td class="mono hash">5da10c964e0d72ed6c7bce2f1907cdb5</td><td class="mono hash">5708f3a66b36ba8fa9bef0fcc9486c5dbe2af4f7…</td><td>2022-08-27 03:47:58</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\AUMIDs.txt">AUMIDs.txt</td><td class="mono hash">ddd674d40b3538ffcd4aa89de006a0fa</td><td class="mono hash">695d0ae0eba0d8ab981d6c72fddb0a7eddd45cfb…</td><td>2022-08-27 03:48:20</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\MPAP_9a15426ec894495f9664b06f66622ba5_001.provxml">MPAP_9a15426ec894495f9664b06f66622ba5_001.provxml</td><td class="mono hash">06b4282c68e1c2d98d0500f4b529df6d</td><td class="mono hash">520dc6f82748a633b4f999c168f13e4f491acee5…</td><td>2022-08-27 03:47:58</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono hash">0a16348b276c6250eb5c84142a8618d0</td><td class="mono hash">b33c87d60a9c868ec239b7e6a62575151628f29f…</td><td>2022-08-27 03:48:18</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm__8wekyb3d8bbwe.appx</td><td class="mono hash">f1d446cac35afec9e3aaeee53af8b0ed</td><td class="mono hash">bdf9c70e4966a4f7ce00ca7fc5179962239514be…</td><td>2022-08-27 03:48:20</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.appx</td><td class="mono hash">3bcb500aa3aafa6f6e347728c2e47891</td><td class="mono hash">c195047f4af9c3ff3d92c40e55a901cf7cfa08a6…</td><td>2022-08-27 03:48:18</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x86__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x86__8wekyb3d8bbwe.appx</td><td class="mono hash">59becee3c17162305e3108a315849f49</td><td class="mono hash">e4c5dff287b59e27eb9da6ccd02ed1c76d3f6001…</td><td>2022-08-27 03:48:18</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono hash">9e1668e28232f8526248a1123baef2a4</td><td class="mono hash">47de27af62a9a31d123a522c4a74056b8a10d153…</td><td>2022-08-27 03:48:20</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm__8wekyb3d8bbwe.appx</td><td class="mono hash">001dc9eb81aadad5c56b76023c001eaf</td><td class="mono hash">7ccf4ef1815d479570fdcf4e462bd7d80f1bc9ae…</td><td>2022-08-27 03:48:20</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.appx</td><td class="mono hash">74dcc090a080498fe2f8ff1c139cec9c</td><td class="mono hash">27fae660d8c609e020703bb463b6601e62811dc7…</td><td>2022-08-27 03:48:20</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x86__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x86__8wekyb3d8bbwe.appx</td><td class="mono hash">a4e2af92db60a0491d0b78372f3b5ab2</td><td class="mono hash">ec7e811dca0cb511c69859c65aa1d94ccd5cc3ca…</td><td>2022-08-27 03:48:20</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.VCLibs.140.00_14.0.30704.0_arm64__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono hash">6bae9fd7c544d6772544c566a2f7738d</td><td class="mono hash">4ab54162efffe26e605c5ec6170de76d72d8f789…</td><td>2022-08-27 03:48:18</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.VCLibs.140.00_14.0.30704.0_arm__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_arm__8wekyb3d8bbwe.appx</td><td class="mono hash">c1730389978d80c87242db4bbfa553b6</td><td class="mono hash">a9e511ff763091b098a932761288c44871dab527…</td><td>2022-08-27 03:48:16</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx</td><td class="mono hash">50d97f4d1c1b158778610206499de133</td><td class="mono hash">009f7db134c6061fe8f260e075374a28abbbc44e…</td><td>2022-08-27 03:48:10</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.VCLibs.140.00_14.0.30704.0_x86__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_x86__8wekyb3d8bbwe.appx</td><td class="mono hash">12d96070171e6706d39424c39982c96f</td><td class="mono hash">397b610554d67abaddfdc287ced6a9bf1ada4d4c…</td><td>2022-08-27 03:48:18</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\MPAP_b7fa05bc792b4894b78b819c6e165934_001.provxml">MPAP_b7fa05bc792b4894b78b819c6e165934_001.provxml</td><td class="mono hash">37da233afa9a0a2977bbcad1df18f411</td><td class="mono hash">f84d2d9d0cd1a153ff51018f451ad0529e56bf17…</td><td>2022-09-14 07:36:08</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono hash">0a16348b276c6250eb5c84142a8618d0</td><td class="mono hash">b33c87d60a9c868ec239b7e6a62575151628f29f…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm__8wekyb3d8bbwe.appx</td><td class="mono hash">f1d446cac35afec9e3aaeee53af8b0ed</td><td class="mono hash">bdf9c70e4966a4f7ce00ca7fc5179962239514be…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.appx</td><td class="mono hash">3bcb500aa3aafa6f6e347728c2e47891</td><td class="mono hash">c195047f4af9c3ff3d92c40e55a901cf7cfa08a6…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x86__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x86__8wekyb3d8bbwe.appx</td><td class="mono hash">59becee3c17162305e3108a315849f49</td><td class="mono hash">e4c5dff287b59e27eb9da6ccd02ed1c76d3f6001…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono hash">9e1668e28232f8526248a1123baef2a4</td><td class="mono hash">47de27af62a9a31d123a522c4a74056b8a10d153…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm__8wekyb3d8bbwe.appx</td><td class="mono hash">001dc9eb81aadad5c56b76023c001eaf</td><td class="mono hash">7ccf4ef1815d479570fdcf4e462bd7d80f1bc9ae…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.appx</td><td class="mono hash">74dcc090a080498fe2f8ff1c139cec9c</td><td class="mono hash">27fae660d8c609e020703bb463b6601e62811dc7…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x86__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x86__8wekyb3d8bbwe.appx</td><td class="mono hash">a4e2af92db60a0491d0b78372f3b5ab2</td><td class="mono hash">ec7e811dca0cb511c69859c65aa1d94ccd5cc3ca…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.VCLibs.140.00_14.0.30704.0_arm64__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono hash">6bae9fd7c544d6772544c566a2f7738d</td><td class="mono hash">4ab54162efffe26e605c5ec6170de76d72d8f789…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.VCLibs.140.00_14.0.30704.0_arm__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_arm__8wekyb3d8bbwe.appx</td><td class="mono hash">c1730389978d80c87242db4bbfa553b6</td><td class="mono hash">a9e511ff763091b098a932761288c44871dab527…</td><td>2022-09-14 07:36:30</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx</td><td class="mono hash">50d97f4d1c1b158778610206499de133</td><td class="mono hash">009f7db134c6061fe8f260e075374a28abbbc44e…</td><td>2022-09-14 07:36:18</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.VCLibs.140.00_14.0.30704.0_x86__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_x86__8wekyb3d8bbwe.appx</td><td class="mono hash">12d96070171e6706d39424c39982c96f</td><td class="mono hash">397b610554d67abaddfdc287ced6a9bf1ada4d4c…</td><td>2022-09-14 07:36:30</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+  <section>
+    <h2>All Scanned Files</h2>
+    <div class="table-wrap">
+      <table id="mainTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable('mainTable',0)">Status</th>
+            <th onclick="sortTable('mainTable',1)">Filename</th>
+            <th onclick="sortTable('mainTable',2)">Type</th>
+            <th onclick="sortTable('mainTable',3)">Size (B)</th>
+            <th onclick="sortTable('mainTable',4)">Created</th>
+            <th onclick="sortTable('mainTable',5)">Modified</th>
+            <th onclick="sortTable('mainTable',6)">Accessed</th>
+            <th>MD5 (partial)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\9a15426ec894495f9664b06f66622ba5.appxbundle">9a15426ec894495f9664b06f66622ba5.appxbundle</td><td class="mono">.appxbundle</td><td class="num">35,577,106</td><td>2023-03-14 07:29:28</td><td>2022-08-27 03:48:00</td><td>2023-03-14 08:02:42</td><td class="mono hash">177d6459cb654a09…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\9a15426ec894495f9664b06f66622ba5_License1.xml">9a15426ec894495f9664b06f66622ba5_License1.xml</td><td class="mono">.xml</td><td class="num">2,682</td><td>2023-03-14 07:29:30</td><td>2022-08-27 03:47:58</td><td>2023-03-14 08:02:40</td><td class="mono hash">5da10c964e0d72ed…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\AUMIDs.txt">AUMIDs.txt</td><td class="mono">.txt</td><td class="num">94</td><td>2023-03-14 07:29:30</td><td>2022-08-27 03:48:20</td><td>2023-03-14 08:02:40</td><td class="mono hash">ddd674d40b3538ff…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\MPAP_9a15426ec894495f9664b06f66622ba5_001.provxml">MPAP_9a15426ec894495f9664b06f66622ba5_001.provxml</td><td class="mono">.provxml</td><td class="num">1,079</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:47:58</td><td>2023-03-14 08:02:40</td><td class="mono hash">06b4282c68e1c2d9…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">5,172,939</td><td>2023-03-14 07:29:31</td><td>2022-08-27 03:48:18</td><td>2023-03-14 08:02:40</td><td class="mono hash">0a16348b276c6250…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">4,973,262</td><td>2023-03-14 07:29:30</td><td>2022-08-27 03:48:20</td><td>2023-03-14 08:02:40</td><td class="mono hash">f1d446cac35afec9…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">5,204,216</td><td>2023-03-14 07:29:31</td><td>2022-08-27 03:48:18</td><td>2023-03-14 08:02:40</td><td class="mono hash">3bcb500aa3aafa6f…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x86__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x86__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">4,642,818</td><td>2023-03-14 07:29:31</td><td>2022-08-27 03:48:18</td><td>2023-03-14 08:02:40</td><td class="mono hash">59becee3c1716230…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">248,183</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:48:20</td><td>2023-03-14 08:02:40</td><td class="mono hash">9e1668e28232f852…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">215,296</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:48:20</td><td>2023-03-14 08:02:40</td><td class="mono hash">001dc9eb81aadad5…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">244,530</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:48:20</td><td>2023-03-14 08:02:40</td><td class="mono hash">74dcc090a080498f…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x86__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x86__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">199,111</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:48:20</td><td>2023-03-14 08:02:40</td><td class="mono hash">a4e2af92db60a049…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.VCLibs.140.00_14.0.30704.0_arm64__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">1,560,214</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:48:18</td><td>2023-03-14 08:02:40</td><td class="mono hash">6bae9fd7c544d677…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.VCLibs.140.00_14.0.30704.0_arm__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_arm__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">805,462</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:48:16</td><td>2023-03-14 08:02:40</td><td class="mono hash">c1730389978d80c8…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">859,530</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:48:10</td><td>2023-03-14 08:02:40</td><td class="mono hash">50d97f4d1c1b1587…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\7VDFT\Microsoft.VCLibs.140.00_14.0.30704.0_x86__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_x86__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">731,418</td><td>2023-03-14 07:29:32</td><td>2022-08-27 03:48:18</td><td>2023-03-14 08:02:40</td><td class="mono hash">12d96070171e6706…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\MPAP_b7fa05bc792b4894b78b819c6e165934_001.provxml">MPAP_b7fa05bc792b4894b78b819c6e165934_001.provxml</td><td class="mono">.provxml</td><td class="num">1,079</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:08</td><td>2023-03-14 08:02:40</td><td class="mono hash">37da233afa9a0a29…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">5,172,939</td><td>2023-03-14 07:29:26</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">0a16348b276c6250…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_arm__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">4,973,262</td><td>2023-03-14 07:29:26</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">f1d446cac35afec9…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">5,204,216</td><td>2023-03-14 07:29:26</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">3bcb500aa3aafa6f…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x86__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Framework.2.2_2.2.29512.0_x86__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">4,642,818</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">59becee3c1716230…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">248,183</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">9e1668e28232f852…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_arm__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">215,296</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">001dc9eb81aadad5…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">244,530</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">74dcc090a080498f…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x86__8wekyb3d8bbwe.appx">Microsoft.NET.Native.Runtime.2.2_2.2.28604.0_x86__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">199,111</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">a4e2af92db60a049…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.VCLibs.140.00_14.0.30704.0_arm64__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_arm64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">1,560,214</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">6bae9fd7c544d677…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.VCLibs.140.00_14.0.30704.0_arm__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_arm__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">805,462</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">c1730389978d80c8…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_x64__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">859,530</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:18</td><td>2023-03-14 08:02:40</td><td class="mono hash">50d97f4d1c1b1587…</td></tr>
+<tr class="row-new"><td><span class="badge badge-new">NEW</span></td><td title="C:\Apps\YR2T2\Microsoft.VCLibs.140.00_14.0.30704.0_x86__8wekyb3d8bbwe.appx">Microsoft.VCLibs.140.00_14.0.30704.0_x86__8wekyb3d8bbwe.appx</td><td class="mono">.appx</td><td class="num">731,418</td><td>2023-03-14 07:29:27</td><td>2022-09-14 07:36:30</td><td>2023-03-14 08:02:40</td><td class="mono hash">12d96070171e6706…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Cloud Forensics Automation &mdash; PRJN26-141 | Energy Sector Breach Analysis<br>
+    Standard library only &mdash; no external dependencies | Python 3.10+
+  </footer>
+
+  <script>
+    const sortState = {};
+    function sortTable(tableId, col) {
+      const tbody = document.querySelector('#' + tableId + ' tbody');
+      const rows  = Array.from(tbody.querySelectorAll('tr'));
+      const asc   = !(sortState[tableId + col]);
+      sortState[tableId + col] = asc;
+      rows.sort((a, b) => {
+        const av = a.cells[col]?.textContent.trim() || '';
+        const bv = b.cells[col]?.textContent.trim() || '';
+        const an = parseFloat(av.replace(/,/g, ''));
+        const bn = parseFloat(bv.replace(/,/g, ''));
+        if (!isNaN(an) && !isNaN(bn)) return asc ? an - bn : bn - an;
+        return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+      });
+      rows.forEach(r => tbody.appendChild(r));
+    }
+    </script>
+</body>
+</html>

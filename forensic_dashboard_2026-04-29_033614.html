@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Forensics Dashboard — PRJN26-141</title>
+  <style>
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --text:      #c9d1d9;
+      --muted:     #8b949e;
+      --blue:      #58a6ff;
+      --green:     #3fb950;
+      --yellow:    #d29922;
+      --red:       #f85149;
+      --purple:    #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: var(--bg); color: var(--text); padding: 28px 32px; line-height: 1.5; }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    h1   { font-size: 1.65rem; color: var(--blue); margin-bottom: 2px; }
+    .sub { font-size: 0.83rem; color: var(--muted); margin-bottom: 24px; }
+
+    /* ── Banners ─────────────────────────────────────────────────────── */
+    .alert-box, .ok-box {
+      border-radius: 8px; padding: 13px 18px; margin-bottom: 22px; font-size: 0.9rem;
+    }
+    .alert-box { background: rgba(248,81,73,0.10); border: 1px solid rgba(248,81,73,0.45); color: var(--red);   }
+    .ok-box    { background: rgba(63,185,80,0.08); border: 1px solid rgba(63,185,80,0.35); color: var(--green); }
+
+    /* ── Stat cards ──────────────────────────────────────────────────── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+             gap: 12px; margin-bottom: 28px; }
+    .card  { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+             padding: 16px; text-align: center; }
+    .card .val   { font-size: 2rem; font-weight: 700; }
+    .card .label { font-size: 0.7rem; color: var(--muted); margin-top: 4px;
+                   text-transform: uppercase; letter-spacing: .06em; }
+    .c-blue   .val { color: var(--blue);   }
+    .c-red    .val { color: var(--red);    }
+    .c-green  .val { color: var(--green);  }
+    .c-yellow .val { color: var(--yellow); }
+
+    /* ── Section headings ────────────────────────────────────────────── */
+    section   { margin-bottom: 32px; }
+    h2        { font-size: 1.05rem; padding-bottom: 8px; margin-bottom: 12px;
+                border-bottom: 1px solid var(--border); }
+    .sec-alert { color: var(--red); }
+
+    /* ── Tables ──────────────────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.81rem; }
+    thead th {
+      background: #1c2128; color: var(--muted); text-align: left;
+      padding: 10px 14px; font-weight: 600; text-transform: uppercase;
+      font-size: 0.71rem; letter-spacing: .05em; cursor: pointer; white-space: nowrap;
+    }
+    thead th:hover { color: var(--text); }
+    td { padding: 8px 14px; border-top: 1px solid var(--border); vertical-align: middle; }
+    tr:hover td { background: rgba(88,166,255,.04); }
+
+    /* ── Status row colours ──────────────────────────────────────────── */
+    .row-new      td { background: rgba(63,185,80,.07);  }
+    .row-modified td { background: rgba(210,153,34,.09); }
+    .row-deleted  td { background: rgba(248,81,73,.08);
+                       text-decoration: line-through; color: var(--muted); }
+
+    /* ── Badges ──────────────────────────────────────────────────────── */
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: .04em;
+    }
+    .badge-new      { background: rgba(63,185,80,.2);  color: var(--green);  border: 1px solid rgba(63,185,80,.45);  }
+    .badge-modified { background: rgba(210,153,34,.2); color: var(--yellow); border: 1px solid rgba(210,153,34,.45); }
+    .badge-deleted  { background: rgba(248,81,73,.2);  color: var(--red);    border: 1px solid rgba(248,81,73,.45);  }
+    .badge-clean    { background: rgba(139,148,158,.15); color: var(--muted); border: 1px solid rgba(139,148,158,.3); }
+
+    /* ── Misc ────────────────────────────────────────────────────────── */
+    .mono  { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.77rem; }
+    .hash  { color: var(--muted); }
+    .num   { text-align: right; }
+    .meta  { font-size: 0.8rem; color: var(--muted); margin-bottom: 16px; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+             color: var(--muted); font-size: 0.77rem; }
+    </style>
+</head>
+<body>
+
+  <h1>Cloud Forensics Evidence Dashboard</h1>
+  <div class="sub">
+    Project PRJN26-141 &mdash; Energy Sector Breach Investigation
+    &nbsp;|&nbsp; Generated: 2026-04-29 03:36:14
+  </div>
+
+  <div class="ok-box">&#10003;  All file hashes match the baseline. No tampering detected.</div>
+
+  <div class="cards">
+    <div class="card c-blue" ><div class="val">16</div><div class="label">Total Files</div></div>
+    <div class="card c-red"  ><div class="val">0</div><div class="label">Flagged</div></div>
+    <div class="card c-green"><div class="val">0</div><div class="label">New</div></div>
+    <div class="card c-yellow"><div class="val">0</div><div class="label">Modified</div></div>
+    <div class="card c-red"  ><div class="val">0</div><div class="label">Deleted</div></div>
+    <div class="card c-green"><div class="val">16</div><div class="label">Clean</div></div>
+  </div>
+
+  <div class="meta">Target directory: <span class="mono">C:\Users\rinsh\Downloads\Telegram Desktop</span></div>
+
+  
+
+  <section>
+    <h2>All Scanned Files</h2>
+    <div class="table-wrap">
+      <table id="mainTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable('mainTable',0)">Status</th>
+            <th onclick="sortTable('mainTable',1)">Filename</th>
+            <th onclick="sortTable('mainTable',2)">Type</th>
+            <th onclick="sortTable('mainTable',3)">Size (B)</th>
+            <th onclick="sortTable('mainTable',4)">Created</th>
+            <th onclick="sortTable('mainTable',5)">Modified</th>
+            <th onclick="sortTable('mainTable',6)">Accessed</th>
+            <th>MD5 (partial)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\@CW_Jacobinte Swargarajyam (2016) 720p WEBRip HEVC.mp4">@CW_Jacobinte Swargarajyam (2016) 720p WEBRip HEVC.mp4</td><td class="mono">.mp4</td><td class="num">814,533,514</td><td>2025-06-22 21:10:17</td><td>2025-06-22 21:17:18</td><td>2026-04-29 03:35:00</td><td class="mono hash">f70b846d32dc441c…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\@C_V_Ramaleela_2017_Malayalam_DVDRip.mkv">@C_V_Ramaleela_2017_Malayalam_DVDRip.mkv</td><td class="mono">.mkv</td><td class="num">834,664,277</td><td>2025-12-08 21:34:11</td><td>2025-12-08 21:40:52</td><td>2026-04-29 03:35:04</td><td class="mono hash">9f940ce82c3f3c56…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\Haal_2026_#Malayalam HQ_#HDRip_x264_AAC_700MB_ESub.mkv">Haal_2026_#Malayalam HQ_#HDRip_x264_AAC_700MB_ESub.mkv</td><td class="mono">.mkv</td><td class="num">768,489,698</td><td>2026-04-19 22:20:30</td><td>2026-04-19 22:28:49</td><td>2026-04-29 03:35:06</td><td class="mono hash">efdcc5c5b663a0a2…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\Kasargold (2023) Malayalam HDRip 720p .mkv">Kasargold (2023) Malayalam HDRip 720p .mkv</td><td class="mono">.mkv</td><td class="num">1,635,197,325</td><td>2023-11-16 09:00:56</td><td>2023-11-16 09:02:39</td><td>2026-04-29 03:35:12</td><td class="mono hash">1e7b0e124c7681fe…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\Kasargold.2023.1080p.NF.WEB-DL.AAC5.1.VP9-SH3LBY.mkv">Kasargold.2023.1080p.NF.WEB-DL.AAC5.1.VP9-SH3LBY.mkv</td><td class="mono">.mkv</td><td class="num">0</td><td>2023-11-15 15:37:39</td><td>2023-11-15 15:37:39</td><td>2026-03-01 22:44:30</td><td class="mono hash">d41d8cd98f00b204…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\RF_Sambavam_Adhyayam_Onnu_2026_Malayalam_HQ_HDRip_x264_AAC_700MB.mkv">RF_Sambavam_Adhyayam_Onnu_2026_Malayalam_HQ_HDRip_x264_AAC_700MB.mkv</td><td class="mono">.mkv</td><td class="num">749,289,474</td><td>2026-04-19 21:37:50</td><td>2026-04-19 21:44:44</td><td>2026-04-29 03:35:14</td><td class="mono hash">294cb2a05d886e83…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\VID-20231006-WA0011.mp4">VID-20231006-WA0011.mp4</td><td class="mono">.mp4</td><td class="num">7,029,936</td><td>2025-12-10 15:13:12</td><td>2025-12-10 15:13:17</td><td>2026-04-29 03:35:14</td><td class="mono hash">aadc76c60869fb49…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\VID-20231006-WA0012.mp4">VID-20231006-WA0012.mp4</td><td class="mono">.mp4</td><td class="num">6,706,430</td><td>2025-12-10 15:13:12</td><td>2025-12-10 15:13:19</td><td>2026-04-29 03:35:14</td><td class="mono hash">e4e6f1e1b3f46b01…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\VID-20231006-WA0013.mp4">VID-20231006-WA0013.mp4</td><td class="mono">.mp4</td><td class="num">28,188,883</td><td>2025-12-10 15:13:29</td><td>2025-12-10 15:13:51</td><td>2026-04-29 03:35:14</td><td class="mono hash">b1cc0fa1e4e95e80…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\VID-20231006-WA0014.mp4">VID-20231006-WA0014.mp4</td><td class="mono">.mp4</td><td class="num">44,181,491</td><td>2025-12-10 15:13:28</td><td>2025-12-10 15:14:32</td><td>2026-04-29 03:35:15</td><td class="mono hash">2559755af534ba8c…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\VID-20231006-WA0015.mp4">VID-20231006-WA0015.mp4</td><td class="mono">.mp4</td><td class="num">50,234,648</td><td>2025-12-10 15:13:25</td><td>2025-12-10 15:14:31</td><td>2026-04-29 03:35:15</td><td class="mono hash">ce6a75d2432fd019…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\VID-20231006-WA0016.mp4">VID-20231006-WA0016.mp4</td><td class="mono">.mp4</td><td class="num">55,555,813</td><td>2025-12-10 15:13:23</td><td>2025-12-10 15:14:41</td><td>2026-04-29 03:35:15</td><td class="mono hash">500a1815a80d0028…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\VID-20231006-WA0017.mp4">VID-20231006-WA0017.mp4</td><td class="mono">.mp4</td><td class="num">7,923,300</td><td>2025-12-10 15:13:12</td><td>2025-12-10 15:13:21</td><td>2026-04-29 03:35:15</td><td class="mono hash">dfed919a55cd6812…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\[MS] Premalu (2024) Malayalam 1080p WEBRIp 10bit HEVC 2CH OP.mkv">[MS] Premalu (2024) Malayalam 1080p WEBRIp 10bit HEVC 2CH OP.mkv</td><td class="mono">.mkv</td><td class="num">1,479,769,177</td><td>2025-11-30 21:40:53</td><td>2025-11-30 22:05:07</td><td>2026-04-29 03:35:20</td><td class="mono hash">9f517f68ffe7e57f…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\[ONR] Alappuzha Gymkhana (2025) Malayalam 720p WEBDL HEV.mkv">[ONR] Alappuzha Gymkhana (2025) Malayalam 720p WEBDL HEV.mkv</td><td class="mono">.mkv</td><td class="num">1,539,878,450</td><td>2025-06-15 13:00:23</td><td>2025-06-15 13:20:24</td><td>2026-04-29 03:35:25</td><td class="mono hash">94bddc1fef007aac…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\Downloads\Telegram Desktop\ടാക്കീസ്_മീഡിയ_റിലീസ്_Ramaleela_Malayalam">ടാക്കീസ്_മീഡിയ_റിലീസ്_Ramaleela_Malayalam</td><td class="mono">(none)</td><td class="num">569,808,532</td><td>2025-12-08 21:22:53</td><td>2025-12-08 21:32:09</td><td>2026-04-29 03:35:27</td><td class="mono hash">9e8e3e34063cbce5…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Cloud Forensics Automation &mdash; PRJN26-141 | Energy Sector Breach Analysis<br>
+    Standard library only &mdash; no external dependencies | Python 3.10+
+  </footer>
+
+  <script>
+    const sortState = {};
+    function sortTable(tableId, col) {
+      const tbody = document.querySelector('#' + tableId + ' tbody');
+      const rows  = Array.from(tbody.querySelectorAll('tr'));
+      const asc   = !(sortState[tableId + col]);
+      sortState[tableId + col] = asc;
+      rows.sort((a, b) => {
+        const av = a.cells[col]?.textContent.trim() || '';
+        const bv = b.cells[col]?.textContent.trim() || '';
+        const an = parseFloat(av.replace(/,/g, ''));
+        const bn = parseFloat(bv.replace(/,/g, ''));
+        if (!isNaN(an) && !isNaN(bn)) return asc ? an - bn : bn - an;
+        return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+      });
+      rows.forEach(r => tbody.appendChild(r));
+    }
+    </script>
+</body>
+</html>
