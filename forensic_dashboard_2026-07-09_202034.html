@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cloud Forensics Dashboard — PRJN26-141</title>
+  <style>
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --text:      #c9d1d9;
+      --muted:     #8b949e;
+      --blue:      #58a6ff;
+      --green:     #3fb950;
+      --yellow:    #d29922;
+      --red:       #f85149;
+      --purple:    #bc8cff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+           background: var(--bg); color: var(--text); padding: 28px 32px; line-height: 1.5; }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    h1   { font-size: 1.65rem; color: var(--blue); margin-bottom: 2px; }
+    .sub { font-size: 0.83rem; color: var(--muted); margin-bottom: 24px; }
+
+    /* ── Banners ─────────────────────────────────────────────────────── */
+    .alert-box, .ok-box {
+      border-radius: 8px; padding: 13px 18px; margin-bottom: 22px; font-size: 0.9rem;
+    }
+    .alert-box { background: rgba(248,81,73,0.10); border: 1px solid rgba(248,81,73,0.45); color: var(--red);   }
+    .ok-box    { background: rgba(63,185,80,0.08); border: 1px solid rgba(63,185,80,0.35); color: var(--green); }
+
+    /* ── Stat cards ──────────────────────────────────────────────────── */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
+             gap: 12px; margin-bottom: 28px; }
+    .card  { background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+             padding: 16px; text-align: center; }
+    .card .val   { font-size: 2rem; font-weight: 700; }
+    .card .label { font-size: 0.7rem; color: var(--muted); margin-top: 4px;
+                   text-transform: uppercase; letter-spacing: .06em; }
+    .c-blue   .val { color: var(--blue);   }
+    .c-red    .val { color: var(--red);    }
+    .c-green  .val { color: var(--green);  }
+    .c-yellow .val { color: var(--yellow); }
+
+    /* ── Section headings ────────────────────────────────────────────── */
+    section   { margin-bottom: 32px; }
+    h2        { font-size: 1.05rem; padding-bottom: 8px; margin-bottom: 12px;
+                border-bottom: 1px solid var(--border); }
+    .sec-alert { color: var(--red); }
+
+    /* ── Tables ──────────────────────────────────────────────────────── */
+    .table-wrap { overflow-x: auto; border-radius: 8px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; font-size: 0.81rem; }
+    thead th {
+      background: #1c2128; color: var(--muted); text-align: left;
+      padding: 10px 14px; font-weight: 600; text-transform: uppercase;
+      font-size: 0.71rem; letter-spacing: .05em; cursor: pointer; white-space: nowrap;
+    }
+    thead th:hover { color: var(--text); }
+    td { padding: 8px 14px; border-top: 1px solid var(--border); vertical-align: middle; }
+    tr:hover td { background: rgba(88,166,255,.04); }
+
+    /* ── Status row colours ──────────────────────────────────────────── */
+    .row-new      td { background: rgba(63,185,80,.07);  }
+    .row-modified td { background: rgba(210,153,34,.09); }
+    .row-deleted  td { background: rgba(248,81,73,.08);
+                       text-decoration: line-through; color: var(--muted); }
+
+    /* ── Badges ──────────────────────────────────────────────────────── */
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 4px;
+      font-size: 0.68rem; font-weight: 700; letter-spacing: .04em;
+    }
+    .badge-new      { background: rgba(63,185,80,.2);  color: var(--green);  border: 1px solid rgba(63,185,80,.45);  }
+    .badge-modified { background: rgba(210,153,34,.2); color: var(--yellow); border: 1px solid rgba(210,153,34,.45); }
+    .badge-deleted  { background: rgba(248,81,73,.2);  color: var(--red);    border: 1px solid rgba(248,81,73,.45);  }
+    .badge-clean    { background: rgba(139,148,158,.15); color: var(--muted); border: 1px solid rgba(139,148,158,.3); }
+
+    /* ── Misc ────────────────────────────────────────────────────────── */
+    .mono  { font-family: 'SFMono-Regular', Consolas, monospace; font-size: 0.77rem; }
+    .hash  { color: var(--muted); }
+    .num   { text-align: right; }
+    .meta  { font-size: 0.8rem; color: var(--muted); margin-bottom: 16px; }
+    footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+             color: var(--muted); font-size: 0.77rem; }
+    </style>
+</head>
+<body>
+
+  <h1>Cloud Forensics Evidence Dashboard</h1>
+  <div class="sub">
+    Project PRJN26-141 &mdash; Energy Sector Breach Investigation
+    &nbsp;|&nbsp; Generated: 2026-07-09 20:20:34
+  </div>
+
+  <div class="ok-box">&#10003;  All file hashes match the baseline. No tampering detected.</div>
+
+  <div class="cards">
+    <div class="card c-blue" ><div class="val">92</div><div class="label">Total Files</div></div>
+    <div class="card c-red"  ><div class="val">0</div><div class="label">Flagged</div></div>
+    <div class="card c-green"><div class="val">0</div><div class="label">New</div></div>
+    <div class="card c-yellow"><div class="val">0</div><div class="label">Modified</div></div>
+    <div class="card c-red"  ><div class="val">0</div><div class="label">Deleted</div></div>
+    <div class="card c-green"><div class="val">92</div><div class="label">Clean</div></div>
+  </div>
+
+  <div class="meta">Target directory: <span class="mono">C:\Users\rinsh\OneDrive\Desktop\coursera</span></div>
+
+  
+
+  <section>
+    <h2>All Scanned Files</h2>
+    <div class="table-wrap">
+      <table id="mainTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable('mainTable',0)">Status</th>
+            <th onclick="sortTable('mainTable',1)">Filename</th>
+            <th onclick="sortTable('mainTable',2)">Type</th>
+            <th onclick="sortTable('mainTable',3)">Size (B)</th>
+            <th onclick="sortTable('mainTable',4)">Created</th>
+            <th onclick="sortTable('mainTable',5)">Modified</th>
+            <th onclick="sortTable('mainTable',6)">Accessed</th>
+            <th>MD5 (partial)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 10.pdf">Coursera 10.pdf</td><td class="mono">.pdf</td><td class="num">310,138</td><td>2025-12-19 16:18:43</td><td>2025-12-19 16:18:43</td><td>2026-07-09 20:20:30</td><td class="mono hash">60bce0ce9850342f…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 11.pdf">Coursera 11.pdf</td><td class="mono">.pdf</td><td class="num">307,399</td><td>2025-12-19 16:19:11</td><td>2025-12-19 16:19:12</td><td>2026-07-09 20:20:30</td><td class="mono hash">4d3286ea5ac49751…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 12.pdf">Coursera 12.pdf</td><td class="mono">.pdf</td><td class="num">291,844</td><td>2025-12-19 16:19:41</td><td>2025-12-19 16:19:41</td><td>2026-07-09 20:20:30</td><td class="mono hash">59548238684ecc67…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 13.pdf">Coursera 13.pdf</td><td class="mono">.pdf</td><td class="num">295,524</td><td>2025-12-19 16:20:11</td><td>2025-12-19 16:20:12</td><td>2026-07-09 20:20:30</td><td class="mono hash">2bbd002318c65a3d…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 14.pdf">Coursera 14.pdf</td><td class="mono">.pdf</td><td class="num">323,656</td><td>2025-12-19 16:20:40</td><td>2025-12-19 16:20:41</td><td>2026-07-09 20:20:30</td><td class="mono hash">9f8a4c1fd8ab3caf…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 15.pdf">Coursera 15.pdf</td><td class="mono">.pdf</td><td class="num">314,352</td><td>2025-12-19 16:21:12</td><td>2025-12-19 16:21:12</td><td>2026-07-09 20:20:30</td><td class="mono hash">30664fc76bbaf8c7…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 16.pdf">Coursera 16.pdf</td><td class="mono">.pdf</td><td class="num">314,352</td><td>2025-12-19 16:22:11</td><td>2025-12-19 16:22:12</td><td>2026-07-09 20:20:30</td><td class="mono hash">30664fc76bbaf8c7…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 17.pdf">Coursera 17.pdf</td><td class="mono">.pdf</td><td class="num">289,564</td><td>2025-12-19 16:22:42</td><td>2025-12-19 16:22:43</td><td>2026-07-09 20:20:30</td><td class="mono hash">1c08d73d585667e0…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 18.pdf">Coursera 18.pdf</td><td class="mono">.pdf</td><td class="num">359,509</td><td>2025-12-19 16:23:10</td><td>2025-12-19 16:23:10</td><td>2026-07-09 20:20:30</td><td class="mono hash">dfc6807f860cfad9…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 19.pdf">Coursera 19.pdf</td><td class="mono">.pdf</td><td class="num">345,958</td><td>2025-12-19 16:23:37</td><td>2025-12-19 16:23:37</td><td>2026-07-09 20:20:30</td><td class="mono hash">051a9b0445677928…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 2.pdf">Coursera 2.pdf</td><td class="mono">.pdf</td><td class="num">298,758</td><td>2025-12-19 16:14:15</td><td>2025-12-19 16:14:16</td><td>2026-07-09 20:20:30</td><td class="mono hash">c5a7b920e45ed9d8…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 21.pdf">Coursera 21.pdf</td><td class="mono">.pdf</td><td class="num">310,137</td><td>2025-12-19 16:24:43</td><td>2025-12-19 16:24:44</td><td>2026-07-09 20:20:30</td><td class="mono hash">0d0cf3a885a4c15f…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 22.pdf">Coursera 22.pdf</td><td class="mono">.pdf</td><td class="num">323,804</td><td>2025-12-19 16:25:09</td><td>2025-12-19 16:25:10</td><td>2026-07-09 20:20:30</td><td class="mono hash">c1ee68bced56c35a…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 23.pdf">Coursera 23.pdf</td><td class="mono">.pdf</td><td class="num">313,053</td><td>2025-12-19 16:25:35</td><td>2025-12-19 16:25:36</td><td>2026-07-09 20:20:30</td><td class="mono hash">7105fada7d302624…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 24.pdf">Coursera 24.pdf</td><td class="mono">.pdf</td><td class="num">304,478</td><td>2025-12-19 16:26:10</td><td>2025-12-19 16:26:10</td><td>2026-07-09 20:20:30</td><td class="mono hash">d8795701d2af6c6a…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 25.pdf">Coursera 25.pdf</td><td class="mono">.pdf</td><td class="num">304,670</td><td>2025-12-19 16:26:54</td><td>2025-12-19 16:26:55</td><td>2026-07-09 20:20:30</td><td class="mono hash">8a45c59e554d29a2…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 26.pdf">Coursera 26.pdf</td><td class="mono">.pdf</td><td class="num">304,478</td><td>2025-12-19 16:27:26</td><td>2025-12-19 16:27:26</td><td>2026-07-09 20:20:30</td><td class="mono hash">d8795701d2af6c6a…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 27.pdf">Coursera 27.pdf</td><td class="mono">.pdf</td><td class="num">312,723</td><td>2025-12-19 16:27:53</td><td>2025-12-19 16:27:53</td><td>2026-07-09 20:20:30</td><td class="mono hash">77cf01778f84ba59…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 28.pdf">Coursera 28.pdf</td><td class="mono">.pdf</td><td class="num">367,193</td><td>2025-12-19 16:28:19</td><td>2025-12-19 16:28:20</td><td>2026-07-09 20:20:30</td><td class="mono hash">1c4335e5321f3f09…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 29.pdf">Coursera 29.pdf</td><td class="mono">.pdf</td><td class="num">311,684</td><td>2025-12-19 16:28:47</td><td>2025-12-19 16:28:47</td><td>2026-07-09 20:20:30</td><td class="mono hash">50f99f9f0f592ec5…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 3.pdf">Coursera 3.pdf</td><td class="mono">.pdf</td><td class="num">296,033</td><td>2025-12-19 16:14:45</td><td>2025-12-19 16:14:46</td><td>2026-07-09 20:20:30</td><td class="mono hash">914ec8570e9cc6c3…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 30.pdf">Coursera 30.pdf</td><td class="mono">.pdf</td><td class="num">357,263</td><td>2025-12-19 16:29:16</td><td>2025-12-19 16:29:16</td><td>2026-07-09 20:20:30</td><td class="mono hash">68d5880fcc0fd08d…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 31.pdf">Coursera 31.pdf</td><td class="mono">.pdf</td><td class="num">307,324</td><td>2025-12-19 16:29:40</td><td>2025-12-19 16:29:40</td><td>2026-07-09 20:20:30</td><td class="mono hash">9542573f4cdc09f2…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 32.pdf">Coursera 32.pdf</td><td class="mono">.pdf</td><td class="num">312,687</td><td>2025-12-19 16:30:06</td><td>2025-12-19 16:30:06</td><td>2026-07-09 20:20:30</td><td class="mono hash">118c40f55bd07b80…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 4.pdf">Coursera 4.pdf</td><td class="mono">.pdf</td><td class="num">301,919</td><td>2025-12-19 16:15:15</td><td>2025-12-19 16:15:16</td><td>2026-07-09 20:20:30</td><td class="mono hash">40284fe89186e8eb…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 5.pdf">Coursera 5.pdf</td><td class="mono">.pdf</td><td class="num">302,239</td><td>2025-12-19 16:15:43</td><td>2025-12-19 16:15:44</td><td>2026-07-09 20:20:30</td><td class="mono hash">335d77698799547f…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 6.pdf">Coursera 6.pdf</td><td class="mono">.pdf</td><td class="num">307,911</td><td>2025-12-19 16:16:10</td><td>2025-12-19 16:16:10</td><td>2026-07-09 20:20:30</td><td class="mono hash">013571aab7b3f843…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 7.pdf">Coursera 7.pdf</td><td class="mono">.pdf</td><td class="num">294,728</td><td>2025-12-19 16:17:07</td><td>2025-12-19 16:17:08</td><td>2026-07-09 20:20:31</td><td class="mono hash">f298c05ca8af6e52…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 8.pdf">Coursera 8.pdf</td><td class="mono">.pdf</td><td class="num">291,080</td><td>2025-12-19 16:17:42</td><td>2025-12-19 16:17:43</td><td>2026-07-09 20:20:31</td><td class="mono hash">64b4b277b0f129f1…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 9.pdf">Coursera 9.pdf</td><td class="mono">.pdf</td><td class="num">292,015</td><td>2025-12-19 16:18:11</td><td>2025-12-19 16:18:12</td><td>2026-07-09 20:20:31</td><td class="mono hash">723131a32ee8e843…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 1.pdf">coursera 1.pdf</td><td class="mono">.pdf</td><td class="num">310,443</td><td>2025-12-19 16:13:44</td><td>2025-12-19 16:13:45</td><td>2026-07-09 20:20:31</td><td class="mono hash">6c696130b02d2050…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 20.pdf">coursera 20.pdf</td><td class="mono">.pdf</td><td class="num">306,089</td><td>2025-12-19 16:24:07</td><td>2025-12-19 16:24:07</td><td>2026-07-09 20:20:31</td><td class="mono hash">9f23712761dabea0…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\.gitignore">.gitignore</td><td class="mono">(none)</td><td class="num">406</td><td>2026-06-08 23:32:17</td><td>2026-04-28 22:46:10</td><td>2026-07-09 20:20:31</td><td class="mono hash">07806fb59b6a66e3…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\Final_Project_Report_PRJN26_141.docx">Final_Project_Report_PRJN26_141.docx</td><td class="mono">.docx</td><td class="num">553,180</td><td>2026-06-08 23:32:17</td><td>2026-04-29 17:01:36</td><td>2026-07-09 20:20:31</td><td class="mono hash">d5fff8baceb73a79…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\HLD_PRJN26_141.docx">HLD_PRJN26_141.docx</td><td class="mono">.docx</td><td class="num">763,252</td><td>2026-06-08 23:32:18</td><td>2026-04-29 17:02:17</td><td>2026-07-09 20:20:31</td><td class="mono hash">0738cead22d26553…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\LLD_PRJN26_141.docx">LLD_PRJN26_141.docx</td><td class="mono">.docx</td><td class="num">553,180</td><td>2026-06-08 23:32:18</td><td>2026-04-29 17:02:23</td><td>2026-07-09 20:20:31</td><td class="mono hash">d5fff8baceb73a79…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\PRJN26_141_Presentation.pptx">PRJN26_141_Presentation.pptx</td><td class="mono">.pptx</td><td class="num">566,130</td><td>2026-06-08 23:32:18</td><td>2026-04-29 17:02:27</td><td>2026-07-09 20:20:31</td><td class="mono hash">3aba89a566878f2c…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\README.md">README.md</td><td class="mono">.md</td><td class="num">11,639</td><td>2026-06-08 23:32:18</td><td>2026-04-28 22:58:23</td><td>2026-07-09 20:20:31</td><td class="mono hash">8feea6d554af069f…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\WPPR_PRJN26_141.docx">WPPR_PRJN26_141.docx</td><td class="mono">.docx</td><td class="num">29,802</td><td>2026-06-08 23:32:18</td><td>2026-04-29 17:02:30</td><td>2026-07-09 20:20:31</td><td class="mono hash">819a3a8453fa08ee…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\app.py">app.py</td><td class="mono">.py</td><td class="num">41,337</td><td>2026-06-08 23:32:17</td><td>2026-04-25 23:25:47</td><td>2026-07-09 20:20:31</td><td class="mono hash">eee8ba86f3af52dd…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\cammand.txt">cammand.txt</td><td class="mono">.txt</td><td class="num">1,737</td><td>2026-06-08 23:32:17</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">088d3ccaa89b493d…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\comparator.py">comparator.py</td><td class="mono">.py</td><td class="num">6,834</td><td>2026-06-08 23:32:17</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">a24b0d30e656f559…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-06_163053.csv">evidence_report_2026-04-06_163053.csv</td><td class="mono">.csv</td><td class="num">4,997</td><td>2026-06-08 23:32:17</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">183cd45c2917cd02…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-07_003243.csv">evidence_report_2026-04-07_003243.csv</td><td class="mono">.csv</td><td class="num">4,997</td><td>2026-06-08 23:32:17</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">1e7c710670856811…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234526.csv">evidence_report_2026-04-25_234526.csv</td><td class="mono">.csv</td><td class="num">2,276</td><td>2026-06-08 23:32:17</td><td>2026-04-25 23:45:26</td><td>2026-07-09 20:20:31</td><td class="mono hash">a969e7a7158cb028…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234532.csv">evidence_report_2026-04-25_234532.csv</td><td class="mono">.csv</td><td class="num">2,276</td><td>2026-06-08 23:32:17</td><td>2026-04-25 23:45:32</td><td>2026-07-09 20:20:31</td><td class="mono hash">2d95651a1ee134c8…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_010126.csv">evidence_report_2026-04-29_010126.csv</td><td class="mono">.csv</td><td class="num">244</td><td>2026-06-08 23:32:17</td><td>2026-04-29 01:01:26</td><td>2026-07-09 20:20:31</td><td class="mono hash">a65ea7fe96888790…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_011747.csv">evidence_report_2026-04-29_011747.csv</td><td class="mono">.csv</td><td class="num">9,411</td><td>2026-06-08 23:32:17</td><td>2026-04-29 01:17:47</td><td>2026-07-09 20:20:31</td><td class="mono hash">f39ed641f3fa08d2…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033424.csv">evidence_report_2026-04-29_033424.csv</td><td class="mono">.csv</td><td class="num">244</td><td>2026-06-08 23:32:17</td><td>2026-04-29 03:34:24</td><td>2026-07-09 20:20:31</td><td class="mono hash">19afb3873d4eaa23…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033434.csv">evidence_report_2026-04-29_033434.csv</td><td class="mono">.csv</td><td class="num">244</td><td>2026-06-08 23:32:17</td><td>2026-04-29 03:34:34</td><td>2026-07-09 20:20:31</td><td class="mono hash">0338415f25a3984a…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033614.csv">evidence_report_2026-04-29_033614.csv</td><td class="mono">.csv</td><td class="num">5,230</td><td>2026-06-08 23:32:17</td><td>2026-04-29 03:36:14</td><td>2026-07-09 20:20:31</td><td class="mono hash">9b9db6c56c766ecd…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033728.csv">evidence_report_2026-04-29_033728.csv</td><td class="mono">.csv</td><td class="num">5,230</td><td>2026-06-08 23:32:17</td><td>2026-04-29 03:37:28</td><td>2026-07-09 20:20:31</td><td class="mono hash">17f0348008ceb0d5…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_165350.csv">evidence_report_2026-04-29_165350.csv</td><td class="mono">.csv</td><td class="num">5,230</td><td>2026-06-08 23:32:17</td><td>2026-04-29 16:53:50</td><td>2026-07-09 20:20:31</td><td class="mono hash">4f223c269613aaee…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171227.csv">evidence_report_2026-04-29_171227.csv</td><td class="mono">.csv</td><td class="num">244</td><td>2026-06-08 23:32:17</td><td>2026-04-29 17:12:27</td><td>2026-07-09 20:20:31</td><td class="mono hash">352eb07fbe4fbc9f…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171336.csv">evidence_report_2026-04-29_171336.csv</td><td class="mono">.csv</td><td class="num">244</td><td>2026-06-08 23:32:17</td><td>2026-04-29 17:13:36</td><td>2026-07-09 20:20:31</td><td class="mono hash">6d8d0a4a2d26a2e0…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171344.csv">evidence_report_2026-04-29_171344.csv</td><td class="mono">.csv</td><td class="num">244</td><td>2026-06-08 23:32:17</td><td>2026-04-29 17:13:44</td><td>2026-07-09 20:20:31</td><td class="mono hash">0659ccabdb3be1cc…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163053.html">forensic_dashboard_2026-04-06_163053.html</td><td class="mono">.html</td><td class="num">14,447</td><td>2026-06-08 23:32:17</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">d803dd77ad4ffc64…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163114.html">forensic_dashboard_2026-04-06_163114.html</td><td class="mono">.html</td><td class="num">16,501</td><td>2026-06-08 23:32:17</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">e9f3685b416692a8…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234526.html">forensic_dashboard_2026-04-25_234526.html</td><td class="mono">.html</td><td class="num">10,955</td><td>2026-06-08 23:32:17</td><td>2026-04-25 23:45:26</td><td>2026-07-09 20:20:31</td><td class="mono hash">0e9396ed1276fc79…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234532.html">forensic_dashboard_2026-04-25_234532.html</td><td class="mono">.html</td><td class="num">10,955</td><td>2026-06-08 23:32:17</td><td>2026-04-25 23:45:32</td><td>2026-07-09 20:20:31</td><td class="mono hash">f53675a4831a9f1d…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_010126.html">forensic_dashboard_2026-04-29_010126.html</td><td class="mono">.html</td><td class="num">8,385</td><td>2026-06-08 23:32:17</td><td>2026-04-29 01:01:26</td><td>2026-07-09 20:20:31</td><td class="mono hash">ae4aa6e58319917d…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_011747.html">forensic_dashboard_2026-04-29_011747.html</td><td class="mono">.html</td><td class="num">32,134</td><td>2026-06-08 23:32:17</td><td>2026-04-29 01:17:47</td><td>2026-07-09 20:20:31</td><td class="mono hash">5a68087b020ea6c5…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033424.html">forensic_dashboard_2026-04-29_033424.html</td><td class="mono">.html</td><td class="num">8,385</td><td>2026-06-08 23:32:17</td><td>2026-04-29 03:34:24</td><td>2026-07-09 20:20:31</td><td class="mono hash">b358ac9b60ccd29d…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033434.html">forensic_dashboard_2026-04-29_033434.html</td><td class="mono">.html</td><td class="num">8,385</td><td>2026-06-08 23:32:17</td><td>2026-04-29 03:34:34</td><td>2026-07-09 20:20:31</td><td class="mono hash">f1c954018383e100…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033614.html">forensic_dashboard_2026-04-29_033614.html</td><td class="mono">.html</td><td class="num">14,811</td><td>2026-06-08 23:32:18</td><td>2026-04-29 03:36:14</td><td>2026-07-09 20:20:31</td><td class="mono hash">bd3d9609dc7c67d8…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033728.html">forensic_dashboard_2026-04-29_033728.html</td><td class="mono">.html</td><td class="num">14,811</td><td>2026-06-08 23:32:18</td><td>2026-04-29 03:37:28</td><td>2026-07-09 20:20:31</td><td class="mono hash">cb11d8641cb759f6…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_165350.html">forensic_dashboard_2026-04-29_165350.html</td><td class="mono">.html</td><td class="num">14,811</td><td>2026-06-08 23:32:18</td><td>2026-04-29 16:53:50</td><td>2026-07-09 20:20:31</td><td class="mono hash">b65b37a7f9ee102e…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171227.html">forensic_dashboard_2026-04-29_171227.html</td><td class="mono">.html</td><td class="num">8,385</td><td>2026-06-08 23:32:18</td><td>2026-04-29 17:12:27</td><td>2026-07-09 20:20:31</td><td class="mono hash">49857ae607aafd8c…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171336.html">forensic_dashboard_2026-04-29_171336.html</td><td class="mono">.html</td><td class="num">8,385</td><td>2026-06-08 23:32:18</td><td>2026-04-29 17:13:36</td><td>2026-07-09 20:20:31</td><td class="mono hash">63cf07189c2d94a4…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171344.html">forensic_dashboard_2026-04-29_171344.html</td><td class="mono">.html</td><td class="num">8,385</td><td>2026-06-08 23:32:18</td><td>2026-04-29 17:13:44</td><td>2026-07-09 20:20:31</td><td class="mono hash">b3a91813930adda3…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_log.txt">forensic_log.txt</td><td class="mono">.txt</td><td class="num">113,225</td><td>2026-06-08 23:32:18</td><td>2026-04-29 17:43:11</td><td>2026-07-09 20:20:31</td><td class="mono hash">55bc78951f378afb…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_tool.py">forensic_tool.py</td><td class="mono">.py</td><td class="num">9,976</td><td>2026-06-08 23:32:18</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">6be911c5ca125956…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\hasher.py">hasher.py</td><td class="mono">.py</td><td class="num">1,140</td><td>2026-06-08 23:32:18</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">25a251f9ae5a7430…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\logger_config.py">logger_config.py</td><td class="mono">.py</td><td class="num">1,283</td><td>2026-06-08 23:32:18</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">f93c79f38608998b…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\report_generator.py">report_generator.py</td><td class="mono">.py</td><td class="num">16,768</td><td>2026-06-08 23:32:18</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">fb212b5202d1f1e9…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\requirements.txt">requirements.txt</td><td class="mono">.txt</td><td class="num">329</td><td>2026-06-08 23:32:18</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:31</td><td class="mono hash">ae77aab94fc2145d…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\scanner.py">scanner.py</td><td class="mono">.py</td><td class="num">3,531</td><td>2026-06-08 23:32:18</td><td>2026-04-25 23:25:14</td><td>2026-07-09 20:20:31</td><td class="mono hash">4cb55dafe56a03aa…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json">baseline_C_Users_rinsh_Downloads_Telegram Desktop.json</td><td class="mono">.json</td><td class="num">5,257</td><td>2026-06-08 23:32:21</td><td>2026-04-29 17:43:11</td><td>2026-07-09 20:20:31</td><td class="mono hash">186a3302aac4a3c8…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy.json">baseline_C_Users_rinsh_Downloads_cloud-forensics-energy.json</td><td class="mono">.json</td><td class="num">21,775</td><td>2026-06-08 23:32:21</td><td>2026-04-16 23:03:35</td><td>2026-07-09 20:20:31</td><td class="mono hash">f5c0eb0b5c359526…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_reports.json">baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_reports.json</td><td class="mono">.json</td><td class="num">2,273</td><td>2026-06-08 23:32:21</td><td>2026-04-25 23:45:23</td><td>2026-07-09 20:20:31</td><td class="mono hash">d65e2ac6a194e857…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json">baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json</td><td class="mono">.json</td><td class="num">198</td><td>2026-06-08 23:32:21</td><td>2026-04-29 17:12:22</td><td>2026-07-09 20:20:31</td><td class="mono hash">c56e58fa6433834b…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json">baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json</td><td class="mono">.json</td><td class="num">9,295</td><td>2026-06-08 23:32:21</td><td>2026-04-16 23:08:02</td><td>2026-07-09 20:20:32</td><td class="mono hash">154c6a093751936d…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json">baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json</td><td class="mono">.json</td><td class="num">205</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">d9551213b130177e…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_flutter.json">baseline_C_Users_shamil_Desktop_flutter.json</td><td class="mono">.json</td><td class="num">5,620,953</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">fdcaa7910ad92b83…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_hey_meat.json">baseline_C_Users_shamil_Desktop_hey_meat.json</td><td class="mono">.json</td><td class="num">888,101</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">ebf6e5448cb7a7fc…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_xampp_htdocs_rinshad.json">baseline_C_xampp_htdocs_rinshad.json</td><td class="mono">.json</td><td class="num">129</td><td>2026-06-08 23:32:21</td><td>2026-04-25 23:44:26</td><td>2026-07-09 20:20:32</td><td class="mono hash">8a7eea9f29c27df9…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003205.csv">evidence_report_2026-04-07_003205.csv</td><td class="mono">.csv</td><td class="num">4,997</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">05693c6cd4da9c8b…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003305.csv">evidence_report_2026-04-07_003305.csv</td><td class="mono">.csv</td><td class="num">4,997</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">ecb0ade2a4771d46…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-16_192549.csv">evidence_report_2026-04-16_192549.csv</td><td class="mono">.csv</td><td class="num">244</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">cedb824402da64b0…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003205.html">forensic_dashboard_2026-04-07_003205.html</td><td class="mono">.html</td><td class="num">14,447</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">b20e9e0b4d98ebee…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003305.html">forensic_dashboard_2026-04-07_003305.html</td><td class="mono">.html</td><td class="num">14,447</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">f361184a137a41df…</td></tr>
+<tr class=""><td><span class="badge badge-clean">CLEAN</span></td><td title="C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-16_192549.html">forensic_dashboard_2026-04-16_192549.html</td><td class="mono">.html</td><td class="num">8,315</td><td>2026-06-08 23:32:21</td><td>2026-04-16 22:32:52</td><td>2026-07-09 20:20:32</td><td class="mono hash">25f668d0b1cf21b7…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Cloud Forensics Automation &mdash; PRJN26-141 | Energy Sector Breach Analysis<br>
+    Standard library only &mdash; no external dependencies | Python 3.10+
+  </footer>
+
+  <script>
+    const sortState = {};
+    function sortTable(tableId, col) {
+      const tbody = document.querySelector('#' + tableId + ' tbody');
+      const rows  = Array.from(tbody.querySelectorAll('tr'));
+      const asc   = !(sortState[tableId + col]);
+      sortState[tableId + col] = asc;
+      rows.sort((a, b) => {
+        const av = a.cells[col]?.textContent.trim() || '';
+        const bv = b.cells[col]?.textContent.trim() || '';
+        const an = parseFloat(av.replace(/,/g, ''));
+        const bn = parseFloat(bv.replace(/,/g, ''));
+        if (!isNaN(an) && !isNaN(bn)) return asc ? an - bn : bn - an;
+        return asc ? av.localeCompare(bv) : bv.localeCompare(av);
+      });
+      rows.forEach(r => tbody.appendChild(r));
+    }
+    </script>
+</body>
+</html>

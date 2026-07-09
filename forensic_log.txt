@@ -1,0 +1,587 @@
+2026-07-09 20:18:40 [INFO    ] GUI started — PRJN26-141 Cloud Forensics Tool
+2026-07-09 20:19:04 [INFO    ] Scanning directory: C:\Users\rinsh\Downloads\Telegram Desktop
+2026-07-09 20:19:04 [INFO    ] Scan complete — 0 file(s) collected from 'C:\Users\rinsh\Downloads\Telegram Desktop'
+2026-07-09 20:19:04 [INFO    ] Baseline saved → baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json  (0 files indexed)
+2026-07-09 20:19:06 [INFO    ] Scanning directory: C:\Users\rinsh\Downloads\Telegram Desktop
+2026-07-09 20:19:06 [INFO    ] Scan complete — 0 file(s) collected from 'C:\Users\rinsh\Downloads\Telegram Desktop'
+2026-07-09 20:19:06 [INFO    ] Baseline loaded ← baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json  (created 2026-07-09 20:19:04, 0 files)
+2026-07-09 20:19:06 [INFO    ] Comparison complete — 0 new | 0 modified | 0 deleted
+2026-07-09 20:19:08 [INFO    ] Baseline loaded ← baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json  (created 2026-07-09 20:19:04, 0 files)
+2026-07-09 20:19:08 [INFO    ] Scanning directory: C:\Users\rinsh\Downloads\Telegram Desktop
+2026-07-09 20:19:08 [INFO    ] Scan complete — 0 file(s) collected from 'C:\Users\rinsh\Downloads\Telegram Desktop'
+2026-07-09 20:19:08 [INFO    ] Comparison complete — 0 new | 0 modified | 0 deleted
+2026-07-09 20:20:30 [INFO    ] Scanning directory: C:\Users\rinsh\OneDrive\Desktop\coursera
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    310138 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 10.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    307399 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 11.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    291844 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 12.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    295524 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 13.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    323656 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 14.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 15.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 16.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    289564 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 17.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    359509 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 18.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    345958 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 19.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    298758 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 2.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    310137 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 21.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    323804 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 22.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    313053 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 23.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 24.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    304670 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 25.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 26.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    312723 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 27.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    367193 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 28.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    311684 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 29.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    296033 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 3.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    357263 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 30.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    307324 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 31.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    312687 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 32.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    301919 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 4.pdf
+2026-07-09 20:20:30 [DEBUG   ] Scanned [    302239 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 5.pdf
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    307911 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 6.pdf
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    294728 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 7.pdf
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    291080 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 8.pdf
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    292015 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 9.pdf
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    310443 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 1.pdf
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    306089 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 20.pdf
+2026-07-09 20:20:31 [DEBUG   ] Scanned [       406 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\.gitignore
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\Final_Project_Report_PRJN26_141.docx
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    763252 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\HLD_PRJN26_141.docx
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\LLD_PRJN26_141.docx
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    566130 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\PRJN26_141_Presentation.pptx
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     11639 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\README.md
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     29802 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\WPPR_PRJN26_141.docx
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     41337 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\app.py
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      1737 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\cammand.txt
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      6834 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\comparator.py
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-06_163053.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-07_003243.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234526.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234532.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_010126.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      9411 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_011747.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033424.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033434.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033614.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033728.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_165350.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171227.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171336.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171344.csv
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163053.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     16501 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163114.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234526.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234532.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_010126.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     32134 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_011747.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033424.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033434.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033614.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033728.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_165350.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171227.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171336.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171344.html
+2026-07-09 20:20:31 [DEBUG   ] Scanned [    113225 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_log.txt
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      9976 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_tool.py
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      1140 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\hasher.py
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      1283 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\logger_config.py
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     16768 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\report_generator.py
+2026-07-09 20:20:31 [DEBUG   ] Scanned [       329 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\requirements.txt
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      3531 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\scanner.py
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      5257 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json
+2026-07-09 20:20:31 [DEBUG   ] Scanned [     21775 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy.json
+2026-07-09 20:20:31 [DEBUG   ] Scanned [      2273 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_reports.json
+2026-07-09 20:20:32 [DEBUG   ] Scanned [       198 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:20:32 [DEBUG   ] Scanned [      9295 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json
+2026-07-09 20:20:32 [DEBUG   ] Scanned [       205 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:20:32 [DEBUG   ] Scanned [   5620953 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_flutter.json
+2026-07-09 20:20:32 [DEBUG   ] Scanned [    888101 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_hey_meat.json
+2026-07-09 20:20:32 [DEBUG   ] Scanned [       129 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_xampp_htdocs_rinshad.json
+2026-07-09 20:20:32 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003205.csv
+2026-07-09 20:20:32 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003305.csv
+2026-07-09 20:20:32 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-16_192549.csv
+2026-07-09 20:20:32 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003205.html
+2026-07-09 20:20:32 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003305.html
+2026-07-09 20:20:32 [DEBUG   ] Scanned [      8315 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-16_192549.html
+2026-07-09 20:20:32 [INFO    ] Scan complete — 92 file(s) collected from 'C:\Users\rinsh\OneDrive\Desktop\coursera'
+2026-07-09 20:20:32 [INFO    ] Baseline saved → baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json  (92 files indexed)
+2026-07-09 20:20:34 [INFO    ] Scanning directory: C:\Users\rinsh\OneDrive\Desktop\coursera
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    310138 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 10.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    307399 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 11.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    291844 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 12.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    295524 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 13.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    323656 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 14.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 15.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 16.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    289564 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 17.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    359509 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 18.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    345958 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 19.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    298758 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 2.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    310137 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 21.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    323804 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 22.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    313053 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 23.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 24.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    304670 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 25.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 26.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    312723 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 27.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    367193 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 28.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    311684 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 29.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    296033 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 3.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    357263 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 30.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    307324 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 31.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    312687 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 32.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    301919 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 4.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    302239 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 5.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    307911 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 6.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    294728 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 7.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    291080 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 8.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    292015 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 9.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    310443 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 1.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    306089 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 20.pdf
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       406 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\.gitignore
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\Final_Project_Report_PRJN26_141.docx
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    763252 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\HLD_PRJN26_141.docx
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\LLD_PRJN26_141.docx
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    566130 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\PRJN26_141_Presentation.pptx
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     11639 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\README.md
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     29802 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\WPPR_PRJN26_141.docx
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     41337 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\app.py
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      1737 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\cammand.txt
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      6834 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\comparator.py
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-06_163053.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-07_003243.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234526.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234532.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_010126.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      9411 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_011747.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033424.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033434.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033614.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033728.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_165350.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171227.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171336.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171344.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163053.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     16501 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163114.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234526.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234532.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_010126.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     32134 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_011747.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033424.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033434.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033614.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033728.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_165350.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171227.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171336.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171344.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    113225 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_log.txt
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      9976 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_tool.py
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      1140 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\hasher.py
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      1283 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\logger_config.py
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     16768 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\report_generator.py
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       329 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\requirements.txt
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      3531 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\scanner.py
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      5257 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     21775 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      2273 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_reports.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       198 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      9295 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       205 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [   5620953 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_flutter.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [    888101 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_hey_meat.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       129 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_xampp_htdocs_rinshad.json
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003205.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003305.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-16_192549.csv
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003205.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003305.html
+2026-07-09 20:20:34 [DEBUG   ] Scanned [      8315 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-16_192549.html
+2026-07-09 20:20:34 [INFO    ] Scan complete — 92 file(s) collected from 'C:\Users\rinsh\OneDrive\Desktop\coursera'
+2026-07-09 20:20:34 [INFO    ] Baseline loaded ← baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json  (created 2026-07-09 20:20:32, 92 files)
+2026-07-09 20:20:34 [INFO    ] Comparison complete — 0 new | 0 modified | 0 deleted
+2026-07-09 20:20:35 [INFO    ] Baseline loaded ← baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json  (created 2026-07-09 20:20:32, 92 files)
+2026-07-09 20:20:35 [INFO    ] Scanning directory: C:\Users\rinsh\OneDrive\Desktop\coursera
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    310138 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 10.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    307399 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 11.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    291844 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 12.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    295524 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 13.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    323656 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 14.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 15.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 16.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    289564 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 17.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    359509 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 18.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    345958 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 19.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    298758 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 2.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    310137 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 21.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    323804 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 22.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    313053 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 23.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 24.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    304670 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 25.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 26.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    312723 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 27.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    367193 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 28.pdf
+2026-07-09 20:20:35 [DEBUG   ] Scanned [    311684 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 29.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    296033 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 3.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    357263 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 30.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    307324 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 31.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    312687 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 32.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    301919 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 4.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    302239 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 5.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    307911 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 6.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    294728 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 7.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    291080 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 8.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    292015 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 9.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    310443 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 1.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    306089 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 20.pdf
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       406 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\.gitignore
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\Final_Project_Report_PRJN26_141.docx
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    763252 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\HLD_PRJN26_141.docx
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\LLD_PRJN26_141.docx
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    566130 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\PRJN26_141_Presentation.pptx
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     11639 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\README.md
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     29802 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\WPPR_PRJN26_141.docx
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     41337 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\app.py
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      1737 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\cammand.txt
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      6834 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\comparator.py
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-06_163053.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-07_003243.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234526.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234532.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_010126.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      9411 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_011747.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033424.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033434.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033614.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033728.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_165350.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171227.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171336.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171344.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163053.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     16501 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163114.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234526.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234532.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_010126.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     32134 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_011747.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033424.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033434.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033614.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033728.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_165350.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171227.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171336.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171344.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    113225 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_log.txt
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      9976 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_tool.py
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      1140 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\hasher.py
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      1283 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\logger_config.py
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     16768 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\report_generator.py
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       329 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\requirements.txt
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      3531 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\scanner.py
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      5257 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     21775 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      2273 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_reports.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       198 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      9295 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       205 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [   5620953 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_flutter.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [    888101 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_hey_meat.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       129 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_xampp_htdocs_rinshad.json
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003205.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003305.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-16_192549.csv
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003205.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003305.html
+2026-07-09 20:20:36 [DEBUG   ] Scanned [      8315 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-16_192549.html
+2026-07-09 20:20:36 [INFO    ] Scan complete — 92 file(s) collected from 'C:\Users\rinsh\OneDrive\Desktop\coursera'
+2026-07-09 20:20:36 [INFO    ] Comparison complete — 0 new | 0 modified | 0 deleted
+2026-07-09 20:54:09 [INFO    ] GUI started — PRJN26-141 Cloud Forensics Tool
+2026-07-09 20:54:22 [INFO    ] Scanning directory: C:\Users\rinsh\OneDrive\Desktop\coursera
+2026-07-09 20:54:22 [DEBUG   ] Scanned [    310138 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 10.pdf
+2026-07-09 20:54:22 [DEBUG   ] Scanned [    307399 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 11.pdf
+2026-07-09 20:54:22 [DEBUG   ] Scanned [    291844 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 12.pdf
+2026-07-09 20:54:22 [DEBUG   ] Scanned [    295524 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 13.pdf
+2026-07-09 20:54:22 [DEBUG   ] Scanned [    323656 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 14.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 15.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 16.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    289564 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 17.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    359509 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 18.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    345958 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 19.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    298758 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 2.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    310137 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 21.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    323804 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 22.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    313053 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 23.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 24.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    304670 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 25.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 26.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    312723 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 27.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    367193 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 28.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    311684 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 29.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    296033 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 3.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    357263 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 30.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    307324 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 31.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    312687 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 32.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    301919 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 4.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    302239 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 5.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    307911 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 6.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    294728 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 7.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    291080 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 8.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    292015 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 9.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    310443 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 1.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    306089 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 20.pdf
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       406 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\.gitignore
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\Final_Project_Report_PRJN26_141.docx
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    763252 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\HLD_PRJN26_141.docx
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\LLD_PRJN26_141.docx
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    566130 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\PRJN26_141_Presentation.pptx
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     11639 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\README.md
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     29802 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\WPPR_PRJN26_141.docx
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     41337 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\app.py
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      1737 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\cammand.txt
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      6834 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\comparator.py
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-06_163053.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-07_003243.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234526.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234532.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_010126.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      9411 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_011747.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033424.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033434.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033614.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033728.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_165350.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171227.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171336.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171344.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163053.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     16501 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163114.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234526.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234532.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_010126.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     32134 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_011747.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033424.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033434.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033614.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033728.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_165350.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171227.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171336.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171344.html
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    113225 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_log.txt
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      9976 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_tool.py
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      1140 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\hasher.py
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      1283 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\logger_config.py
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     16768 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\report_generator.py
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       329 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\requirements.txt
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      3531 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\scanner.py
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      5257 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [     21775 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      2273 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_reports.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       198 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      9295 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       205 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [   5620953 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_flutter.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [    888101 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_hey_meat.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [       129 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_xampp_htdocs_rinshad.json
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003205.csv
+2026-07-09 20:54:23 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003305.csv
+2026-07-09 20:54:24 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-16_192549.csv
+2026-07-09 20:54:24 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003205.html
+2026-07-09 20:54:24 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003305.html
+2026-07-09 20:54:24 [DEBUG   ] Scanned [      8315 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-16_192549.html
+2026-07-09 20:54:24 [INFO    ] Scan complete — 92 file(s) collected from 'C:\Users\rinsh\OneDrive\Desktop\coursera'
+2026-07-09 20:54:24 [INFO    ] Baseline saved → baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json  (92 files indexed)
+2026-07-09 20:54:25 [INFO    ] Scanning directory: C:\Users\rinsh\OneDrive\Desktop\coursera
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    310138 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 10.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    307399 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 11.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    291844 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 12.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    295524 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 13.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    323656 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 14.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 15.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 16.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    289564 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 17.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    359509 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 18.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    345958 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 19.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    298758 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 2.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    310137 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 21.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    323804 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 22.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    313053 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 23.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 24.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    304670 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 25.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 26.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    312723 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 27.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    367193 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 28.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    311684 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 29.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    296033 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 3.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    357263 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 30.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    307324 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 31.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    312687 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 32.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    301919 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 4.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    302239 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 5.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    307911 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 6.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    294728 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 7.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    291080 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 8.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    292015 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 9.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    310443 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 1.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    306089 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 20.pdf
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       406 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\.gitignore
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\Final_Project_Report_PRJN26_141.docx
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    763252 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\HLD_PRJN26_141.docx
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\LLD_PRJN26_141.docx
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    566130 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\PRJN26_141_Presentation.pptx
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     11639 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\README.md
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     29802 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\WPPR_PRJN26_141.docx
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     41337 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\app.py
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      1737 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\cammand.txt
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      6834 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\comparator.py
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-06_163053.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-07_003243.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234526.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234532.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_010126.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      9411 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_011747.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033424.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033434.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033614.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033728.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_165350.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171227.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171336.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171344.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163053.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     16501 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163114.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234526.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234532.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_010126.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     32134 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_011747.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033424.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033434.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033614.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033728.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_165350.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171227.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171336.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171344.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    113225 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_log.txt
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      9976 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_tool.py
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      1140 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\hasher.py
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      1283 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\logger_config.py
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     16768 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\report_generator.py
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       329 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\requirements.txt
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      3531 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\scanner.py
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      5257 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     21775 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      2273 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_reports.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       198 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      9295 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       205 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [   5620953 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_flutter.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [    888101 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_hey_meat.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       129 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_xampp_htdocs_rinshad.json
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003205.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003305.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-16_192549.csv
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003205.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003305.html
+2026-07-09 20:54:25 [DEBUG   ] Scanned [      8315 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-16_192549.html
+2026-07-09 20:54:25 [INFO    ] Scan complete — 92 file(s) collected from 'C:\Users\rinsh\OneDrive\Desktop\coursera'
+2026-07-09 20:54:25 [INFO    ] Baseline loaded ← baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json  (created 2026-07-09 20:54:24, 92 files)
+2026-07-09 20:54:25 [INFO    ] Comparison complete — 0 new | 0 modified | 0 deleted
+2026-07-09 20:54:27 [INFO    ] Baseline loaded ← baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json  (created 2026-07-09 20:54:24, 92 files)
+2026-07-09 20:54:27 [INFO    ] Scanning directory: C:\Users\rinsh\OneDrive\Desktop\coursera
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    310138 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 10.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    307399 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 11.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    291844 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 12.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    295524 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 13.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    323656 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 14.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 15.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    314352 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 16.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    289564 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 17.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    359509 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 18.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    345958 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 19.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    298758 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 2.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    310137 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 21.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    323804 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 22.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    313053 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 23.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 24.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    304670 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 25.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    304478 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 26.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    312723 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 27.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    367193 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 28.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    311684 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 29.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    296033 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 3.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    357263 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 30.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    307324 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 31.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    312687 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 32.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    301919 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 4.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    302239 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 5.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    307911 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 6.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    294728 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 7.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    291080 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 8.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    292015 B] C:\Users\rinsh\OneDrive\Desktop\coursera\Coursera 9.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    310443 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 1.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    306089 B] C:\Users\rinsh\OneDrive\Desktop\coursera\coursera 20.pdf
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       406 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\.gitignore
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\Final_Project_Report_PRJN26_141.docx
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    763252 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\HLD_PRJN26_141.docx
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    553180 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\LLD_PRJN26_141.docx
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    566130 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\PRJN26_141_Presentation.pptx
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     11639 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\README.md
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     29802 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\WPPR_PRJN26_141.docx
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     41337 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\app.py
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      1737 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\cammand.txt
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      6834 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\comparator.py
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-06_163053.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-07_003243.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234526.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      2276 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-25_234532.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_010126.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      9411 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_011747.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033424.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033434.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033614.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_033728.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      5230 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_165350.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171227.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171336.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\evidence_report_2026-04-29_171344.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163053.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     16501 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-06_163114.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234526.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     10955 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-25_234532.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_010126.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     32134 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_011747.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033424.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033434.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033614.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_033728.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     14811 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_165350.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171227.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171336.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      8385 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_dashboard_2026-04-29_171344.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    113225 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_log.txt
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      9976 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\forensic_tool.py
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      1140 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\hasher.py
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      1283 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\logger_config.py
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     16768 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\report_generator.py
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       329 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\requirements.txt
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      3531 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\scanner.py
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      5257 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_Telegram Desktop.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     21775 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      2273 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_reports.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       198 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_Downloads_cloud-forensics-energy_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      9295 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_rinsh_OneDrive_Desktop_coursera.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       205 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_collage PT with id_PRJN26-141_cloud-forensics-energy_sample_energy_data.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [   5620953 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_flutter.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [    888101 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_Users_shamil_Desktop_hey_meat.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       129 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\baselines\baseline_C_xampp_htdocs_rinshad.json
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003205.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      4997 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-07_003305.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [       244 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\evidence_report_2026-04-16_192549.csv
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003205.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [     14447 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-07_003305.html
+2026-07-09 20:54:27 [DEBUG   ] Scanned [      8315 B] C:\Users\rinsh\OneDrive\Desktop\coursera\cloud-forensics-energy\reports\forensic_dashboard_2026-04-16_192549.html
+2026-07-09 20:54:27 [INFO    ] Scan complete — 92 file(s) collected from 'C:\Users\rinsh\OneDrive\Desktop\coursera'
+2026-07-09 20:54:27 [INFO    ] Comparison complete — 0 new | 0 modified | 0 deleted
